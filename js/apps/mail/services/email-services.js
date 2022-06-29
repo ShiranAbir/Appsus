@@ -1,3 +1,5 @@
+import { utilService } from "../services/utilService.js"
+
 const EMAILS_KEY = 'emails'
 
 const loggedinUser = {
