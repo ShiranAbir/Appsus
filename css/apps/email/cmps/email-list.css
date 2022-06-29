@@ -1,0 +1,35 @@
+.grey{
+   background-color: rgb(242,245,245,0.8);
+ }
+
+.email li {
+    display: grid; 
+    cursor: pointer;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: repeat(10,1fr); 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    border-bottom: 1px black solid;
+    grid-template-areas: 
+      "from subject subject subject body body body body . date";
+   color: #202124; 
+  }
+
+  .email li:hover{
+    border: 1px black solid;
+  }
+
+  .from { 
+    grid-area: from;
+    margin-left: 1em;
+ }
+  .subject {
+     grid-area: subject;
+     }
+  .body {
+     grid-area: body;
+     }
+  .date { 
+    grid-area: date;
+ }
+
