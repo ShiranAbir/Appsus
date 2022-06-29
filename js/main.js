@@ -5,8 +5,8 @@ import { router } from "./router.js"
 const options = {
     template: `
           <section>
-          <router-link to="'/missKeep">MissKeep</router-link>
-          <router-link to="'/misterEmail">MisterEmail</router-link>
+          <!-- <router-link to="'/keepApp">MissKeep</router-link> -->
+          <router-link to="'/emailApp">MisterEmail</router-link>
               <router-view/>
             
           </section>
@@ -14,7 +14,7 @@ const options = {
     components: {
 
     },
-};
+}
 
 
 
