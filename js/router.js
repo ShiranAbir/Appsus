@@ -1,18 +1,14 @@
-const routes = [{
-        path: '/',
-        component: homePage
-    },
-    {
-        path: '/about',
-        component: aboutPage
-    },
+import misterEmail from './pages/misterEmail-app.cmp.js'
+import missKeep from './pages/missKeep-app.cmp.js'
+
+const routes = [
     {
         path: '/missKeep',
-        component: aboutPage
+        component: missKeep
     },
     {
         path: '/misterEmail',
-        component: aboutPage
+        component: misterEmail
     },
 
 ]
