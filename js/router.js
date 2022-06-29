@@ -1,8 +1,7 @@
-import misterEmail from './pages/misterEmail-app.cmp.js'
-import missKeep from './pages/missKeep-app.cmp.js'
+import misterEmail from "./pages/misterEmail-app.cmp.js"
+import missKeep from "./pages/missKeep-app.cmp.js"
 
-const routes = [
-    {
+const routes = [{
         path: '/missKeep',
         component: missKeep
     },
