@@ -1,0 +1,23 @@
+.input-container {
+    background-color: aliceblue;
+    padding: 17px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgb(119, 114, 114);
+}
+
+.input-container>* {
+    border: none;
+    background-color: aliceblue;
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+.input-btn {
+    border-radius: 50px;
+    color: rgb(119, 114, 114);
+}
+
+.input-btn:hover {
+    background-color: rgb(206, 189, 189);
+}
