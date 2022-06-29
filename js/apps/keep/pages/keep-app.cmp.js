@@ -1,14 +1,45 @@
+import { noteService } from "../services/note-service.js";
+
+import noteList from "../cmps/note-list.cmp.js";
+import addNote from "../cmps/add-note.cmp.js";
+
 export default {
     template: `
+    <add-note/>
     <section class="keep-app" >
     <h3>keep app page</h3>
+
+    <note-list :notes="notes" @remove="removeNote"/>
+
     </section>
   `,
-    components: {},
-    data() {
-        return {};
+    components: {
+        noteList,
+        addNote,
     },
-    created() {},
-    methods: {},
+    data() {
+        return {
+            notes: null,
+
+        };
+    },
+    created() {
+        noteService.query().then(
+            notes => {
+                this.notes = notes
+                console.log('notes', this.notes)
+            })
+
+    },
+    methods: {
+        removeNote(id) {
+            noteService.removeNote(id)
+                .then(() => {
+                    const idx = this.notes.findIndex((note) => note.id === id);
+                    this.notes.splice(idx, 1);
+                })
+
+        }
+    },
     computed: {},
 };
