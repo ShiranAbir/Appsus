@@ -7,8 +7,7 @@ export default {
     template: `
     <add-note @addNewNote="addNewNote" />
     <section class="keep-app" >
-    <h3>keep app page</h3>
-
+   
     <note-list :notes="notes" @remove="removeNote"/>
 
     </section>

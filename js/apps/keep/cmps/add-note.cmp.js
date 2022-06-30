@@ -54,10 +54,15 @@ export default {
         },
         addTodoNote() {
             const inputTodos = this.input.split(",")
+            const getTodoObj = inputTodos.map(todo => {
+                return { txt: todo, doneAt: null }
+            })
+            console.log(getTodoObj)
             const note = noteService.getEmptyTodoNote()
-            console.log('inputTodos', inputTodos)
-            const todosNum = inputTodos.length
-            console.log('todosNum', todosNum)
+            note.info.todos = getTodoObj
+            console.log('note', note)
+            noteService.addNote(note)
+
 
         }
     },

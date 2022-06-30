@@ -2,23 +2,32 @@ export default {
     template: `
           <section>
           
-            <label>
-                {{info}}
+            <div v-for="infoObj in info.todos" @click="isDone=!isDone" :style="readStyle" >
+                {{infoObj.txt}}
               
-            </label>  
+            </div >  
           </section>
           `,
     props: ["info"],
     data() {
         return {
-            val: ''
+            isDone: false,
         }
     },
     methods: {
 
-
     },
     computed: {
+        readStyle() {
+            return {
+                'text-decoration': this.isDone ? 'line-through' : 'none',
+                'text-align': 'left',
+                width: '150px'
+
+
+
+            }
+        }
 
     },
     created() {

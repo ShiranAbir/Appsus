@@ -4,12 +4,12 @@ import notePreview from "./note-preview.cmp.js";
 import noteTxt from "./note-text.cmp.js";
 import noteImg from "./note-img.cmp.js";
 import noteVid from "./note-vid.cmp.js";
-// import noteTodos from "./note-text.cmp.js";
+import noteTodos from "./note-todos.cmp.js";
 
 
 export default {
     template: `
-        <h1>All Notes</h1>
+        
     <section class="note-list-container">
 
 
@@ -47,7 +47,7 @@ export default {
         noteTxt,
         noteImg,
         noteVid,
-        // noteTodos,
+        noteTodos,
     },
     data() {
         return {
