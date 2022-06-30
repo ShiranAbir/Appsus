@@ -1,6 +1,6 @@
 
 .side-nav{
-    background-color: rgb(199, 31, 31);
+    background-color: #FFFFFF;
     display: block;
     position: fixed;
     width: 72px;
@@ -17,9 +17,12 @@
     margin: auto;
     padding-top: 8px;
     background-image: url(/imgs/create_32dp.png);
+    cursor: pointer;
 }
 
-.open-modal-btn-container{
+
+
+.create-email-btn-container{
     margin: auto;
     border-radius: 28px;
     font-size: 0;
@@ -27,4 +30,11 @@
     padding: 0;
     width: 56px;
     background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    
+}
+
+.create-email-btn-container:hover{
+    box-shadow: -1px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%), 0px 5px 5px -3px rgb(0 0 0 / 20%);
+
 }
