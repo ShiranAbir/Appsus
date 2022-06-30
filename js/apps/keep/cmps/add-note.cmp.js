@@ -4,28 +4,45 @@ export default {
     template: `
           <section>
            
-            <label class="input-container">
-               <input type="text" v-model="input" placeholder="Take a note..." >
+          
+            <form class="input-form" >
+                <input type="text" placeholder="Title" name="title" v-model="title"> 
+                <label class="input-container">
 
-               <!-- <textarea v-model="input"  cols="30" rows="1"></textarea> -->
+                <button class="input-btn" @click="addImgNote" ><i class="fa-solid fa-image"></i></button>
 
-               <button class="input-btn" @click="addImgNote" ><i class="fa-solid fa-image"></i></button>
+                   <button class="input-btn"
+                   @click="addTodoNote"><i class="fa-solid fa-list"></i></button>
 
-               <button class="input-btn"
-               @click="addTodoNote"><i class="fa-solid fa-list"></i></button>
+                  <button class="input-btn" @click="addTextNote" ><i class="fa-solid fa-comment"></i></button>
 
-               <button class="input-btn" @click="addTextNote" ><i class="fa-solid fa-comment"></i></button>
+                 <button class="input-btn" @click="addVidNote"><i class="fa-solid fa-clapperboard"></i></button>
 
-               <button class="input-btn" @click="addVidNote"><i class="fa-solid fa-clapperboard"></i></button>
+                     </label>  
 
-              
-            </label>  
+                <p>
+                    <textarea name="content"  placeholder="Take a note..."  v-model="content" cols="30" rows="3"></textarea>
+                </p>
+
+                
+
+
+
+
+                
+            </form>
+
+
+
+
+
           </section>
           `,
     props: ["info"],
     data() {
         return {
-            input: null,
+            title: null,
+            content: null,
             noteId: null
         }
     },
@@ -34,34 +51,47 @@ export default {
         //     this.$emit('addNewNote')
         // },
         addTextNote() {
+            note.title = this.title
             const note = noteService.getEmptyTextNote()
-            note.info.txt = this.input
+            note.info.txt = this.content
             console.log(this.addTextNote)
             noteService.addNote(note)
 
             this.$emit('addNewNote', note)
         },
         addImgNote() {
+            note.title = this.title
+
             const note = noteService.getEmptyImgNote()
             this.noteId = note.id
-            note.info.url = this.input
+            note.info.url = this.content
             noteService.addNote(note)
+
+            this.$emit('addNewNote', note)
         },
         addVidNote() {
+            note.title = this.title
+
             const note = noteService.getEmptyVidNote()
-            note.info.vidUrl = this.input
+            note.info.vidUrl = this.content
             noteService.addNote(note)
+
+            this.$emit('addNewNote', note)
         },
         addTodoNote() {
-            const inputTodos = this.input.split(",")
-            const getTodoObj = inputTodos.map(todo => {
-                return { txt: todo, doneAt: null }
-            })
-            console.log(getTodoObj)
+            note.title = this.title
+
+            const contentTodos = this.content.split(",")
+            const getTodoObj = contentTodos.map(todo => {
+                    return { txt: todo, isDone: false }
+                })
+                // console.log(getTodoObj)
             const note = noteService.getEmptyTodoNote()
             note.info.todos = getTodoObj
-            console.log('note', note)
+                // console.log('note', note)
             noteService.addNote(note)
+
+            this.$emit('addNewNote', note)
 
 
         }

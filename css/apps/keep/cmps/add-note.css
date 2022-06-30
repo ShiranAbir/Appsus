@@ -23,3 +23,42 @@
 .input-btn:hover {
     background-color: rgb(206, 189, 189);
 }
+
+
+/* input trile */
+
+.input-form {
+    position: relative;
+    width: 600px;
+    margin: 32px, auto 50px auto;
+    background-color: fff(243, 248, 233);
+    padding: 7px;
+    border-radius: 7px;
+    /* box-shadow: 0 1px gray */
+    /* border: 1px solid rgb(249, 244, 244); */
+    box-shadow: 0 0 5px 0.1px;
+}
+
+.input-form input {
+    width: 300px;
+    /* border: none; */
+    padding: 3px;
+    /* margin-bottom: 20px; */
+    outline: none;
+    font-size: 1rem;
+    resize: none;
+}
+
+.input-form textarea {
+    width: 100%;
+    border: none;
+    padding: 3px;
+    /* margin-bottom: 20px; */
+    outline: none;
+    font-size: 1rem;
+    resize: none;
+}
+
+.title {
+    font-size: large;
+}

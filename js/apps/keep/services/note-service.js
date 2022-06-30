@@ -20,7 +20,19 @@ export const noteService = {
     getEmptyTextNote,
     getEmptyVidNote,
     getEmptyTodoNote,
+    editNoteBGColor,
+    pinNote,
 };
+
+function editNoteBGColor(note, color) {
+    note.bGC = color
+    return storageService.put(NOTES_KEY, note)
+}
+
+function pinNote(note) {
+    note.isPinned = !note.isPinned
+    return storageService.put(NOTES_KEY, note)
+}
 
 
 function query() {
@@ -35,14 +47,16 @@ function _createNotes() {
     if (!notes || !notes.length) {
         notes = [{
                 id: "n101",
+                title: "Hello",
                 type: "note-txt",
                 isPinned: true,
                 info: {
                     txt: "Fullstack Me Baby!"
-                }
+                },
             },
             {
                 id: "n109",
+                title: "Daniel",
                 type: "note-vid",
                 isPinned: false,
                 info: {
@@ -52,6 +66,7 @@ function _createNotes() {
             },
             {
                 id: "n110",
+                title: "Pizza",
                 type: "note-vid",
                 isPinned: false,
                 info: {
@@ -61,6 +76,7 @@ function _createNotes() {
             },
             {
                 id: "n102",
+                title: "Dogs",
                 type: "note-img",
                 info: {
                     url: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
@@ -72,6 +88,7 @@ function _createNotes() {
             },
             {
                 id: "n101",
+                title: "I Love You",
                 type: "note-txt",
                 isPinned: true,
                 info: {
@@ -80,6 +97,7 @@ function _createNotes() {
             },
             {
                 id: "n102",
+                title: "Cupssss",
                 type: "note-img",
                 info: {
                     url: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
@@ -89,12 +107,13 @@ function _createNotes() {
             },
             {
                 id: "n103",
+                title: "I hate Cleaning",
                 type: "note-todos",
                 info: {
                     label: "Get my stuff together",
                     todos: [
-                        { txt: "Driving liscence", doneAt: null },
-                        { txt: "Coding power", doneAt: 187111111 }
+                        { txt: "Driving liscence", isDone: false },
+                        { txt: "Coding power", isDone: false }
                     ]
                 }
             }
@@ -114,6 +133,7 @@ function addNote(note) {
 function getEmptyTextNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-txt",
         isPinned: false,
         info: {
@@ -125,10 +145,10 @@ function getEmptyTextNote() {
 function getEmptyImgNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-img",
         info: {
             url: "",
-            title: ""
         },
 
     }
@@ -137,6 +157,7 @@ function getEmptyImgNote() {
 function getEmptyVidNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-vid",
         isPinned: false,
         info: {
@@ -150,13 +171,14 @@ function getEmptyVidNote() {
 function getEmptyTodoNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-todos",
         info: {
             label: "Get my stuff together",
 
             todos: [
-                { txt: "Driving liscence", doneAt: null },
-                { txt: "Coding power", doneAt: 187111111 }
+                { txt: "Driving liscence", isDone: false },
+                { txt: "Coding power", isDone: false }
             ]
         }
     }
@@ -166,6 +188,4 @@ function getEmptyTodoNote() {
 
 function removeNote(noteId) {
     return storageService.remove(NOTES_KEY, noteId)
-
-
 }

@@ -3,8 +3,9 @@ export default {
           <section>
           
             <div>
-                <!-- {{info.url}} -->
-                <img class="input-image" :src="info.url" alt="">
+            <h1 class="title">{{note.title}}</h1>
+
+                <img class="input-image" :src="note.info.url" alt="">
                 
 
             </div>
@@ -13,7 +14,7 @@ export default {
             </label>  
           </section>
           `,
-    props: ["info"],
+    props: ["note"],
     data() {
         return {
 

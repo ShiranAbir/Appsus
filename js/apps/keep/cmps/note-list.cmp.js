@@ -15,15 +15,18 @@ export default {
 
          <div class="note-container" :style="readStyle" v-for="note in notes">
          <component :is="note.type"
-         :info="note.info"> 
+         :note="note" :style="{'background-color':note.bGC}" > 
           
 
          </component> 
          <div class="edit-btn-container">
-         <button ><i class="fa-solid fa-thumbtack"></i></button>
+
+
+         <button @click="pinNote(note)" ><i class="fa-solid fa-thumbtack"></i></button>
 
             <div class="color-input-container">
-                <input class="color-input" type="color" v-model="bGColor">
+
+                <input class="color-input" type="color" @input="changeBGC(note)" v-model="colorInput">
                 <i class="fa-solid fa-palette"></i>
 
             </div>
@@ -52,25 +55,37 @@ export default {
     data() {
         return {
             notes: this.notes,
-            bGColor: null,
+            // bGColor: null,
 
         };
     },
     computed: {
         readStyle() {
             return {
-                'background-color': this.bGColor || 'white',
                 width: '200px',
                 margin: '10px',
             }
-        }
+        },
+        // readNoteStyle(note) {
+        //     return {
+        //         'background-color': note.bGC
+        //     }
+        // }
     },
     methods: {
         remove(id) {
             this.$emit('remove', id)
-        }
-    },
-    created() {},
-    watch: {}
+        },
+        changeBGC(note) {
+            const newBGC = this.colorInput
+                // console.log('ssss', newBGC, id)
+            this.$emit('changeBGC', note, newBGC)
 
-};
+        },
+        pinNote(note) {
+            this.$emit('pinNote', note)
+        },
+        // note.isPinned = true
+        // this.notes.unshift(note)
+    }
+}

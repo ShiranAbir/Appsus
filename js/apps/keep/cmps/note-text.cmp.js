@@ -3,15 +3,15 @@ export default {
           <section>
           
             <div>
-
-                {{info.txt}}
+            <h1 class="title">{{note.title}}</h1>
+                {{note.info.txt}}
 
             </div>
                
            
           </section>
           `,
-    props: ["info"],
+    props: ["note"],
     data() {
         return {
 
