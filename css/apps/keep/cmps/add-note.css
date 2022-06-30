@@ -3,7 +3,8 @@
     padding: 17px;
     align-items: center;
     border-radius: 10px;
-    border: 1px solid rgb(119, 114, 114);
+    border: 1px solid rgb(249, 244, 244);
+    box-shadow: 0 0 5px 0.1px;
 }
 
 .input-container>* {
@@ -16,6 +17,7 @@
 .input-btn {
     border-radius: 50px;
     color: rgb(119, 114, 114);
+    cursor: pointer;
 }
 
 .input-btn:hover {
