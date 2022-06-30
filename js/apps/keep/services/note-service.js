@@ -14,7 +14,12 @@ export const noteService = {
     // save,
     // addGoogleBook,
     // getNextBookId,
+    getEmptyImgNote,
+    addNote,
     removeNote,
+    getEmptyTextNote,
+    getEmptyVidNote,
+    getEmptyTodoNote,
 };
 
 
@@ -37,6 +42,24 @@ function _createNotes() {
                 }
             },
             {
+                id: "n109",
+                type: "note-vid",
+                isPinned: false,
+                info: {
+                    vidUrl: "https://www.youtube.com/embed/9YffrCViTVk"
+                }
+
+            },
+            {
+                id: "n110",
+                type: "note-vid",
+                isPinned: false,
+                info: {
+                    vidUrl: "https://www.youtube.com/embed/LG-9SaCUmu8"
+                }
+
+            },
+            {
                 id: "n102",
                 type: "note-img",
                 info: {
@@ -62,9 +85,7 @@ function _createNotes() {
                     url: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
                     title: "Bobi and Me"
                 },
-                style: {
-                    backgroundColor: "#00d"
-                }
+
             },
             {
                 id: "n103",
@@ -85,49 +106,66 @@ function _createNotes() {
     return notes;
 }
 
-// function get(bookId) {
-//     return storageService.get(BOOKS_KEY, bookId)
-// }
+function addNote(note) {
+    return storageService.post(NOTES_KEY, note)
 
+}
 
-// function save(book) {
-//     if (book.id) return storageService.put(BOOKS_KEY, book)
-//     else return storageService.post(BOOKS_KEY, book)
-// }
+function getEmptyTextNote() {
+    return {
+        id: utilService.makeId(),
+        type: "note-txt",
+        isPinned: false,
+        info: {
+            txt: ""
+        }
+    }
+}
 
+function getEmptyImgNote() {
+    return {
+        id: utilService.makeId(),
+        type: "note-img",
+        info: {
+            url: "",
+            title: ""
+        },
 
-// function getEmptyReview() {
-//     return { bookTitle: "", fullName: "", stars: "", date: "", bookReview: "", }
-// }
+    }
+}
 
-// function addReview(bookId, review) {
-//     review.id = utilService.makeId()
-//     return get(bookId)
-//         .then(book => {
-//             if (!book.reviews) book.reviews = []
-//             book.reviews.push(review)
-//             return storageService.put(BOOKS_KEY, book)
-//         })
+function getEmptyVidNote() {
+    return {
+        id: utilService.makeId(),
+        type: "note-vid",
+        isPinned: false,
+        info: {
+            vidUrl: "",
+        }
 
-// }
+    }
+
+}
+
+function getEmptyTodoNote() {
+    return {
+        id: utilService.makeId(),
+        type: "note-todos",
+        info: {
+            label: "Get my stuff together",
+
+            // todos: [
+            //     { txt: "Driving liscence", doneAt: null },
+            //     { txt: "Coding power", doneAt: 187111111 }
+            // ]
+        }
+    }
+
+}
+
 
 function removeNote(noteId) {
     return storageService.remove(NOTES_KEY, noteId)
 
-    // get(noteId)
-    //     .then(note => {
-    //         const idx = note.reviews.findIndex(review => review.id === reviewId)
-    //         book.reviews.splice(idx, 1)
-    //         return storageService.put(NOTES_KEY, NOTES)
-    //     })
+
 }
-
-// function getNextBookId(bookId) {
-//     return storageService.query(BOOKS_KEY)
-//         .then(books => {
-//             const idx = books.findIndex(book => book.id === bookId) //מחזיר אינדקס של הספר שעונה עך הבדיקה
-//             return (idx < books.length - 1) ? books[idx + 1].id : books[0].id
-
-//         }) //מחזיר ספר עם אינדקס גדול ב1
-
-// }
