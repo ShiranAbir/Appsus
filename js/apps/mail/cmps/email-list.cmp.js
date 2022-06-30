@@ -1,6 +1,7 @@
 import emailPreview from "./email-preview.cmp.js"
 import { emailService } from "../services/email-services.js"
 import emailCreate from "./email-create.cmp.js"
+import sideNav from "./side-nav.cmp.js"
 
 export default {
     props: ["emails"],
@@ -12,21 +13,34 @@ export default {
                 <email-preview :email="email" :key="email.id"/>
             </router-link>
         </div>
-        <email-create></email-create>
+        <email-create @emailSent="emailSent(newEmail)" @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
+        <side-nav @openNewEmail="openModal"></side-nav>
     </section>
 `,
     components: {
         emailPreview,
         emailCreate,
+        sideNav,
     },
 
     data() {
         return {
             selectedEmail: null,
             unReadEmails:0,
+            newEmailCreate: false,
         }
     },
     methods: {
+        emailSent(newEmail){
+            console.log(newEmail)
+        },
+        openModal(){
+            console.log('hi')
+            this.newEmailCreate = true
+        },
+        closeModal(){
+            this.newEmailCreate = false
+        },
         emailSelected(email) {
             if (!this.selectedEmail) {
                 this.selectedEmail = email

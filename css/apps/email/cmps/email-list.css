@@ -1,7 +1,3 @@
-.grey{
-   background-color: rgb(242,245,245,0.8);
- }
-
 .email li {
     display: grid; 
     cursor: pointer;
@@ -9,14 +5,31 @@
     grid-template-columns: repeat(10,1fr); 
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
-    border-bottom: 1px black solid;
     grid-template-areas: 
       "from subject subject subject body body body body . date";
    color: #202124; 
+   box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+   font-weight: 700;
+   font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+   font-size: .875rem;
+   height: 40px;
+   margin-left: 72px;
   }
 
+  .email a {
+   text-decoration: none!important;
+  }
+
+  .body{
+   font-weight: 500;
+  }
+
+  .grey{
+   background-color: rgb(242,245,245,0.8);
+ }
+
   .email li:hover{
-    border: 1px black solid;
+   box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
   }
 
   .from { 
