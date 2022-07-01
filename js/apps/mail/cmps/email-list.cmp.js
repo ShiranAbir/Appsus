@@ -10,11 +10,11 @@ export default {
         <h1>Unread emails: {{unReadEmails}}</h1>
         <div class="email" @click="emailSelected(email)" v-for="(email,id) in emails" :key="email.id">
             <router-link tag="button" :to="'/email/'+email.id">
-                <email-preview :email="email" :key="email.id"/>
+                <email-preview @deleteEmail="deleteEmail" :email="email" :key="email.id"/>
             </router-link>
         </div>
         <email-create @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
-        <side-nav @openNewEmail="openModal"></side-nav>
+        <side-nav @changeFolder="changeFolder" @openNewEmail="openModal"></side-nav>
     </section>
 `,
     components: {
@@ -48,7 +48,13 @@ export default {
         },
         setUnreadCount(){
             emailService.countUnreadEmails().then(count => this.unReadEmails = count)
-        }
+        },
+        changeFolder(folder){
+            this.$emit('changeFolder',folder)
+        },
+        deleteEmail(id){
+            this.$emit('deleteEmail',id)
+        },
     },
     computed: {
     },

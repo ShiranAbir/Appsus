@@ -8,34 +8,40 @@ export default {
     template: `
       <section>
         <email-header @filterd="filterByRead" @searched="filterByKey"/>
-        <email-list :emails="this.emails"></email-list>
+        <email-list @deleteEmail="deleteEmail" @changeFolder="changeFolder" :emails="this.emails"/>
       </section>
   `,
     data() {
         return {
             emails: utilService.gEmails,
-        };
+            criteria: {
+                status: 'inbox',
+                txt: null,
+            }
+        }
     },
     methods: {
         filterByKey(val) {
-            emailService.query().then(emails => {
-              emails = emails.filter(email => {
-                return email.subject.toLowerCase().includes(val.toLowerCase()) ||
-                  email.from.toLowerCase().includes(val.toLowerCase()) ||
-                  email.body.toLowerCase().includes(val.toLowerCase())
-              })
-              this.emails = emails
-            })
+            this.criteria.txt = val
+            emailService.query(this.criteria).then(emails => this.emails = emails)
           },
-          filterByRead(val) {
-            emailService.query().then(emails => {
-              emails = emails.filter(email => {
-                if (val === 'all') return true
-                return email.isRead.toString() === val
-              })
-              this.emails = emails
-            })
-          }
+        filterByRead(val) {
+            this.criteria.isRead = val
+            emailService.query(this.criteria).then(emails => this.emails = emails)
+          },
+        changeFolder(folder){
+            this.criteria.status = folder
+            emailService.query(this.criteria).then(emails => this.emails = emails)
+        },
+        deleteEmail(id){
+            if (this.criteria.status === 'trash'){
+                 emailService.deleteEmail(id)
+            }else{
+                console.log(id)
+                emailService.addToTrash(id)
+                location.reload()
+            }
+        },
     },
     computed: {},
     components: {
@@ -43,7 +49,6 @@ export default {
         emailHeader,
     },
     created() {
-        emailService.query().then(emails => this.emails = emails)
-        console.log(this.folder)
+        emailService.query(this.criteria).then(emails => this.emails = emails)
       },
 }
