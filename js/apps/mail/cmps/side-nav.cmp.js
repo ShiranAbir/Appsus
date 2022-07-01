@@ -5,9 +5,9 @@ export default {
           <div class="create-email-btn-container">
             <div @click="openNew" class="create-email-btn"></div>
           </div>
-          <!-- <button @click="changeFolder('inbox')">Inbox</button> -->
+          <div @click="changeFolder('inbox')" class="inbox-btn"></div>
           <div @click="changeFolder('sent')" class="sent-btn"></div>
-          <!-- <button @click="changeFolder('trash')">Trash</button> -->
+          <div @click="changeFolder('trash')" class="trash-btn"></div>
         </nav>
       </section>
   `,

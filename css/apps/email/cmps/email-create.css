@@ -48,7 +48,7 @@
     position: absolute;
     right: 5px;
     top:5px;
-    background: no-repeat url(/imgs/sprites-general.png) 0 -789px;
+    background: no-repeat url(../imgs/sprites-general.png) 0 -789px;
     background-size: 24px 882px;
     height: 24px;
     width: 24px;
@@ -66,7 +66,7 @@
     position: absolute;
     right: 30px;
     top:5px;
-    background: url(/imgs/expand_window_2x.png);
+    background: url(../imgs/expand_window_2x.png);
     background-size: 24px;
     height: 24px;
     width: 24px;
@@ -84,7 +84,7 @@
     position: absolute;
     right: 55px;
     top:5px;
-    background: no-repeat url(/imgs/sprites-general.png) 0 -141px;
+    background: no-repeat url(../imgs/sprites-general.png) 0 -141px;
     background-size: 24px 882px;
     height: 24px;
     width: 24px;
@@ -145,7 +145,7 @@
 }
 
 .delete-btn{
-    background-image: url(/imgs/delete-email.png);
+    background-image: url(../imgs/delete-email.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
@@ -164,5 +164,3 @@
 .delete-btn:hover{
     opacity:1;
 }
-/* padding-left: 5px;
-padding-right: 5px; */

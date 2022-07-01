@@ -1,6 +1,6 @@
 import { noteService } from "../services/note-service.js";
 // import { emailService } from "../../../apps/mail/services/email-services.js"
-import { emailService } from "../../mail/services.js"
+// import { emailService } from "../../mail/services.js"
 
 
 import noteList from "../cmps/note-list.cmp.js";

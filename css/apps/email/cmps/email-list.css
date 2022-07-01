@@ -18,7 +18,7 @@
   }
 
   .delete-email-btn{
-   background-image: url(/imgs/delete-email.png);
+   background-image: url(../imgs/delete-email.png);
    background-position: center;
    background-repeat: no-repeat;
    background-size: 20px;
