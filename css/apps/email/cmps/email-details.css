@@ -1,0 +1,17 @@
+.details-subject {
+    font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 1.575rem;
+    font-variant-ligatures: no-contextual;
+    color: #202124;
+    font-weight: 500;
+}
+
+.details-from {
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 1.275rem;
+    letter-spacing: .2px;
+    color: #202124;
+    line-height: 20px;
+    font-weight: bold;
+    margin-left: 0;
+}

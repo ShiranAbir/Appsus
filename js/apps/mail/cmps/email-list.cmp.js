@@ -13,7 +13,7 @@ export default {
                 <email-preview :email="email" :key="email.id"/>
             </router-link>
         </div>
-        <email-create @emailSent="emailSent(newEmail)" @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
+        <email-create @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
         <side-nav @openNewEmail="openModal"></side-nav>
     </section>
 `,
@@ -31,11 +31,7 @@ export default {
         }
     },
     methods: {
-        emailSent(newEmail){
-            console.log(newEmail)
-        },
         openModal(){
-            console.log('hi')
             this.newEmailCreate = true
         },
         closeModal(){

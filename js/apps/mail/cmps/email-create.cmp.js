@@ -1,3 +1,5 @@
+import { emailService } from "../services/email-services.js"
+
 export default {
     template: `
  <section class="email-compose">
@@ -9,11 +11,11 @@ export default {
             <img class="minimize-btn" src="imgs/cleardot.gif"/>
             </div>
             <div class="form-all-input">
-                <input class="form-input form-to" type="text" placeholder="To:" />
-                <input class="form-input" type="text" placeholder="Cc:" />
-                <input class="form-input" type="text" placeholder="Bcc:" />
-                <input class="form-input" type="text" placeholder="Subject:" />          
-                <textarea class="form-input" rows="22"></textarea>
+                <input v-model="newEmail.to" class="form-input form-to" type="text" placeholder="To:" />
+                <input v-model="newEmail.cc" class="form-input" type="text" placeholder="Cc:" />
+                <input v-model="newEmail.bcc" class="form-input" type="text" placeholder="Bcc:" />
+                <input v-model="newEmail.subject" class="form-input" type="text" placeholder="Subject:" />          
+                <textarea v-model="newEmail.body" class="form-input" rows="22"></textarea>
             </div>  
 
             <div class="form-btns">
@@ -26,6 +28,7 @@ export default {
     data() {
         return {
             newEmail:{
+                from: 'me',
                 to: null,
                 cc: null,
                 bcc: null,
@@ -36,20 +39,38 @@ export default {
     },
     methods: {
         closeModal(){
-            console.log('hi')
             this.$emit('closeNewEmail')  
         },
         sendEmail(){
             if (!this.newEmail.to) return alert('Please specify at least one recipient.')
             if (!this.newEmail.subject&&!this.newEmail.body) {
                 if (confirm('Send this message without a subject or text in the body?')) {
-                    this.closeModal()
+                    emailService.addEmail(this.newEmail)
+                    .then(mail => {
+                        console.log('add')
+                        console.log(mail)
+                        this.closeModal()
+                    })
                     this.$emit('emailSent',this.newEmail)
                 }
             }
             this.$emit('emailSent',this.newEmail)
-            this.closeModal()
-        }
+            emailService.addEmail(this.newEmail)
+            .then(mail => {
+                console.log('add')
+                console.log(mail)
+                this.closeModal()
+            })
+        },
+        add() {
+            bookService.addReview(this.book.id, this.review)
+                .then(book => {
+                    this.book = book;
+                    this.review = bookService.getEmptyReview()
+                    eventBus.emit('show-msg', { txt: `A review on book ${this.book.id} was successfully added`, type: 'success' });
+                })
+        },
+        
     },
     computed: {
 

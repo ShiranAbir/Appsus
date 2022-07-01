@@ -1,4 +1,6 @@
 @import 'cmps/header.css';
 @import 'cmps/email-list.css';
 @import 'cmps/email-create.css';
+@import 'cmps/email-details.css';
 @import 'cmps/side-nav.css';
+@import 'cmps/email-main-nav.css'

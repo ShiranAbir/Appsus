@@ -1,4 +1,5 @@
 .email li {
+   position: relative;
     display: grid; 
     cursor: pointer;
     grid-auto-columns: 1fr; 
@@ -6,7 +7,7 @@
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "from subject subject subject body body body body . date";
+      "from subject subject subject body body body body date delete";
    color: #202124; 
    box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
    font-weight: 700;
@@ -15,6 +16,25 @@
    height: 40px;
    margin-left: 72px;
   }
+
+  .delete-email-btn{
+   background-image: url(/imgs/delete-email.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 20px;
+   height: 20px;
+   opacity: 0.54;
+   width: 20px;
+   align-items: center;
+   border: none;
+   display: inline-flex; 
+   justify-content: center; 
+   outline: none;
+   grid-area: delete;
+   position: absolute;
+   right: 30px;
+   top: 10px;
+}
 
   .email a {
    text-decoration: none!important;

@@ -18,15 +18,16 @@ export const emailService = {
     getEmailById,
     modifyEmail,
     countUnreadEmails,
+    addEmail,
+    deleteEmail,
 }
 
-function countUnreadEmails(){
+function countUnreadEmails() {
     var unreadEmails = 0
-    gEmails.forEach(email=>{
-        if (email.isRead === false )
-        unreadEmails ++
+    gEmails.forEach(email => {
+        if (email.isRead === false)
+            unreadEmails++
     })
-    console.log(unreadEmails)
     return Promise.resolve(unreadEmails)
 }
 
@@ -58,6 +59,26 @@ function createMails() {
         utilService.saveToStorage(EMAILS_KEY, gEmails);
     }
     return gEmails
+}
+
+function addEmail(newEmail) {
+    newEmail.id = utilService.makeId()
+    newEmail.isRead = true
+    newEmail.sentAt = new Date()
+    gEmails.push(newEmail)
+    utilService.saveToStorage(EMAILS_KEY, gEmails)
+    location.reload()
+    return Promise.resolve(newEmail)
+}
+
+function deleteEmail(id) {
+    var idx = gEmails.findIndex(email => {
+        return email.id === id
+    })
+    gEmails.splice(idx,1)
+    utilService.saveToStorage(EMAILS_KEY, gEmails)
+    location.reload()
+    return Promise.resolve()
 }
 
 function loadEmails() {
