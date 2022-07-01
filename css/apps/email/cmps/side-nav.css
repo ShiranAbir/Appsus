@@ -5,7 +5,7 @@
     position: fixed;
     width: 72px;
     height: 100vw;
-    top: 0;
+    top: 82.18px;
 }
 
 .create-email-btn{
@@ -37,4 +37,33 @@
 .create-email-btn-container:hover{
     box-shadow: -1px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%), 0px 5px 5px -3px rgb(0 0 0 / 20%);
 
+}
+
+.sent-btn {
+    background-image: url(/imgs/send_black_20dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin-top: 20px;
+    margin-left: 25px;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    opacity: 0.54;
+    cursor: pointer;
+}
+
+.sent-btn:hover {
+    background-image: url(/imgs/send_black_20dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin-top: 20px;
+    margin-left: 25px;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    opacity: 0.54;
+    cursor: pointer;
+    background-color: #eee;
 }

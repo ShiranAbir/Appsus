@@ -17,9 +17,7 @@ export default {
     },
     methods: {
         removeEmail(id){
-            console.log('hi')
-            console.log(id)
-            emailService.deleteEmail(id)
+            this.$emit('deleteEmail', id)
         }
     },
     computed: {

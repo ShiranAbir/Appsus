@@ -1,4 +1,10 @@
 
 .search-email{
-    margin-left: 72px;
+    height: 64px;
+    position: relative;
+}
+
+.search-input{
+    display: flex;
+    margin: auto;
 }

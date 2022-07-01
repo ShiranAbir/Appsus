@@ -10,7 +10,6 @@ const loggedinUser = {
 
 var gEmails = null
 
-
 export const emailService = {
     query,
     createMails,
@@ -20,6 +19,7 @@ export const emailService = {
     countUnreadEmails,
     addEmail,
     deleteEmail,
+    addToTrash,
 }
 
 function countUnreadEmails() {
@@ -47,8 +47,46 @@ function getEmailById(emailId) {
     return Promise.resolve(email)
 }
 
-function query() {
-    return storageService.query(EMAILS_KEY)
+function addToTrash(emailId) {
+    modifyEmail(emailId, 'removedAt', new Date())
+}
+
+function query(criteria) {
+    return storageService.query(EMAILS_KEY).then(emails => {
+        // If sent emails, filter accordingly
+        if (criteria.status === 'inbox') {
+            emails = emails.filter(email => {
+                return !email.removedAt && email.to === loggedinUser.email
+            })
+        } else if (criteria.status === 'sent') {
+            emails = emails.filter(email => {
+                return !email.removedAt && email.to !== loggedinUser.email
+            })
+        } else if (criteria.status === 'trash') {
+            emails = emails.filter(email => {
+                return email.removedAt
+            })
+        }
+
+        // If filter by text
+        if (criteria.txt) {
+            emails = emails.filter(email => {
+                return email.subject.toLowerCase().includes(criteria.txt.toLowerCase()) ||
+                    email.from.toLowerCase().includes(criteria.txt.toLowerCase()) ||
+                    email.body.toLowerCase().includes(criteria.txt.toLowerCase())
+            })
+        }
+
+        // If filter by read status
+        if (criteria.isRead) {
+            emails = emails.filter(email => {
+                if (criteria.isRead === 'all') return true
+                return email.isRead.toString() === criteria.isRead
+            })
+        }
+
+        return Promise.resolve(emails)
+    })
 }
 
 createMails()
@@ -75,7 +113,7 @@ function deleteEmail(id) {
     var idx = gEmails.findIndex(email => {
         return email.id === id
     })
-    gEmails.splice(idx,1)
+    gEmails.splice(idx, 1)
     utilService.saveToStorage(EMAILS_KEY, gEmails)
     location.reload()
     return Promise.resolve()
@@ -89,7 +127,8 @@ function loadEmails() {
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'user@appsus.com',
+        removedAt: 1551133950594,
     }, {
         from: 'Yair',
         id: 'e102',
@@ -97,7 +136,8 @@ function loadEmails() {
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'momo@momo.com',
+        removedAt: 1551133950594,
     }, {
         from: 'Yair',
         id: 'e103',
@@ -105,7 +145,7 @@ function loadEmails() {
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'user@appsus.com'
     }, {
         from: 'Yair',
         id: 'e104',
@@ -113,7 +153,7 @@ function loadEmails() {
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'user@appsus.com'
     }, {
         from: 'Yair',
         id: 'e105',
@@ -121,6 +161,6 @@ function loadEmails() {
         body: 'Would love to catch up sometimes',
         isRead: false,
         sentAt: 1551133930594,
-        to: 'momo@momo.com'
+        to: 'user@appsus.com'
     }]
 }

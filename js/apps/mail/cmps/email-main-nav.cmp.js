@@ -1,7 +1,7 @@
 export default {
     template: `
    <section>
-        <input @input="searchByKey($event)" type="text" placeholder="Search mail">
+        <input class="search-input" @input="searchByKey($event)" type="text" placeholder="Search mail">
         <select @change="filterByStatus($event)">
             <option value="all">All</option>
             <option value=true>Read</option>
