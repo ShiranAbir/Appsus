@@ -1,4 +1,5 @@
 import {emailService} from "../services/email-services.js"
+// import { noteService } from "../../keep/services/note-service.js"
 
 export default {
     template: `
@@ -8,12 +9,17 @@ export default {
                 <p class="details-from">{{email.from}}</p>          
                 <p class="details-date">{{formatSentDate(email.sentAt)}}</p>       
                 <p class="details-body">{{email.body}}</p>
+                <!-- <button @click="saveToKeep">Save as Note</button> -->
             </li>
       </section>
   `,
     data() {
         return {
-            email: null
+            email: null,
+            note:{
+                title: null,
+                info: null,
+            }
         }
     },
     methods: {
@@ -49,7 +55,11 @@ export default {
             }
             
             return formattedDate
-        }
+        },
+        // saveToKeep(){
+        //     this.note
+        //     noteService
+        // },
     },
     computed: {
         

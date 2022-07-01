@@ -37,11 +37,11 @@ export default {
             if (this.criteria.status === 'trash'){
                  emailService.deleteEmail(id)
             }else{
-                console.log(id)
                 emailService.addToTrash(id)
                 location.reload()
             }
         },
+
     },
     computed: {},
     components: {

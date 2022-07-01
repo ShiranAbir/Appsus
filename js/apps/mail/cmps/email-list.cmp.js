@@ -7,14 +7,13 @@ export default {
     props: ["emails"],
     template: `
     <section class="email-list">
-        <h1>Unread emails: {{unReadEmails}}</h1>
         <div class="email" @click="emailSelected(email)" v-for="(email,id) in emails" :key="email.id">
             <router-link tag="button" :to="'/email/'+email.id">
-                <email-preview @deleteEmail="deleteEmail" :email="email" :key="email.id"/>
+                <email-preview @toggleIsRead="toggleIsRead" @deleteEmail="deleteEmail" :email="email" :key="email.id"/>
             </router-link>
         </div>
         <email-create @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
-        <side-nav @changeFolder="changeFolder" @openNewEmail="openModal"></side-nav>
+        <side-nav ref="sideNav" @changeFolder="changeFolder" @openNewEmail="openModal"></side-nav>
     </section>
 `,
     components: {
@@ -26,7 +25,6 @@ export default {
     data() {
         return {
             selectedEmail: null,
-            unReadEmails:0,
             newEmailCreate: false,
         }
     },
@@ -55,10 +53,15 @@ export default {
         deleteEmail(id){
             this.$emit('deleteEmail',id)
         },
+        toggleIsRead(val){
+            if (val) {
+                this.$refs.sideNav.changeUnreadCount(true)
+            } else {
+                this.$refs.sideNav.changeUnreadCount(false)
+            }
+            
+        },
     },
     computed: {
     },
-    created() {
-        this.setUnreadCount()
-    }
 }

@@ -3,11 +3,11 @@
     display: grid; 
     cursor: pointer;
     grid-auto-columns: 1fr; 
-    grid-template-columns: repeat(10,1fr); 
+    grid-template-columns: repeat(20,1fr); 
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "from subject subject subject body body body body date delete";
+      "from from subject subject subject subject subject body body body body body body body body . . . delete read";
    color: #202124; 
    box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
    font-weight: 700;
@@ -36,6 +36,25 @@
    top: 10px;
 }
 
+.setread-email-btn{
+   background-image: url(../imgs/mark_as_unread_black_20dp.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 20px;
+   height: 20px;
+   opacity: 0.54;
+   width: 20px;
+   align-items: center;
+   border: none;
+   display: inline-flex; 
+   justify-content: center; 
+   outline: none;
+   grid-area: read;
+   position: absolute;
+   right: 30px;
+   top: 10px;
+}
+
   .email a {
    text-decoration: none!important;
   }
@@ -56,13 +75,18 @@
     grid-area: from;
     margin-left: 1em;
  }
+
   .subject {
      grid-area: subject;
      }
+
   .body {
      grid-area: body;
      }
+
   .date { 
     grid-area: date;
  }
+
+
 

@@ -5,6 +5,91 @@
 }
 
 .search-input{
+    position:relative;
     display: flex;
     margin: auto;
+    border: 0!important;
+    background: transparent;
+    font-variant-ligatures: none;
+    box-sizing: border-box;
+    cursor:text;
+    height: 46px;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 50px;
+    padding-top:20px;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: auto;
+    font-weight: 100;
+    font: 1.5rem Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.clear-search{
+    color: #5f6368;
+    opacity: 1;
+    fill: currentColor;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.start-search{
+    color: #5f6368;
+    opacity: 1;
+    fill: currentColor;
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.round-hover-clear:hover {
+    background-color: #3c404314;
+    border-radius: 50%;
+    
+}
+
+.filterEmails{
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    left: -80px;
+    height:64px ;
+    top:0;
+    background: #f1f3f4;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: 1rem Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: auto;
+    font-weight: 100;
+    color: #5f6368;
+    text-align: center;
+}
+
+.hamburger{
+    color: #5f6368;
+    fill: currentColor;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
 }

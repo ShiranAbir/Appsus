@@ -5,7 +5,7 @@
     position: fixed;
     width: 72px;
     height: 100vw;
-    top: 82.18px;
+    top: 120px;
 }
 
 .create-email-btn{
@@ -37,56 +37,100 @@
 
 }
 
+.round-hover:hover {
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.inbox-selected {
+    background-color: #fce8e6;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin: auto;
+}
+
+.folder-not-selected {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin: auto;
+}
+
+.folder-selected {
+    background-color: #e8eaed;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    margin: auto;
+}
+
 .inbox-btn {
     background-image: url(../imgs/inbox_black_20dp.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 32px;
     margin-top: 20px;
-    margin-left: 25px;
+    padding: 6px 7px;
     display: flex;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     opacity: 0.54;
     cursor: pointer;
 }
 
-.inbox-btn:hover {
-    background-color: #eee;
+.inbox-btn-selected {
+    background-image: url(../imgs/inbox_gm_googlered600_20dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    margin-top: 20px;
+    padding: 6px 7px;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    cursor: pointer;
 }
 
 .sent-btn {
     background-image: url(../imgs/send_black_20dp.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 32px;
     margin-top: 20px;
-    margin-left: 25px;
+    padding: 6px 7px;
     display: flex;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     opacity: 0.54;
     cursor: pointer;
-}
-
-.sent-btn:hover {
-    background-color: #eee;
 }
 
 .trash-btn {
     background-image: url(../imgs/delete_black_20dp.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 32px;
     margin-top: 20px;
-    margin-left: 25px;
+    padding: 6px 7px;
     display: flex;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     opacity: 0.54;
     cursor: pointer;
 }
 
-.trash-btn:hover {
-    background-color: #eee;
-}
+.unread-emails{
+    position: absolute;
+    background-color: #d23f31;
+    font-size: 1rem;
+    color: #fff;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    margin: 0;
+    right: 8px;
+    opacity: 1;
+    border-radius: 50%;
+    padding: 1px 4px;
+  }
