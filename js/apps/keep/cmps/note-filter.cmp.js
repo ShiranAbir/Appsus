@@ -2,10 +2,14 @@ export default {
     props: ['notes'],
     template: `
     <section class="note-filter-container">
-        <!-- <h1>filterrrrr</h1> -->
-        <input type="text" v-model="filterBy.title" @input="filter">
+      
+    <div class="filter-text-container">
+        <input type="text" v-model="filterBy.title" @input="filter" placeholder="Search..." class="search-input"> 
+        <p><i class="fa-solid fa-magnifying-glass"></i></p>
 
-        <select  v-model="filterBy.type" @change="filter">
+    </div>
+
+        <select  v-model="filterBy.type" @change="filter" class="select-input">
             <option value="note-txt">Text</option>
             <option value="note-img">Img</option>
             <option value="note-vid">Video</option>
