@@ -1,4 +1,7 @@
 import { noteService } from "../services/note-service.js";
+// import { emailService } from "../../../apps/mail/services/email-services.js"
+import { emailService } from "../../mail/services.js"
+
 
 import noteList from "../cmps/note-list.cmp.js";
 import addNote from "../cmps/add-note.cmp.js";
@@ -10,7 +13,7 @@ export default {
     <add-note @addNewNote="addNewNote" />
     <section class="keep-app" >
    
-    <note-list :notes="notesToDisplay" @remove="removeNote" @pinNote="pinNote" @changeBGColor="changeBGC" @duplicateNote="duplicateNote"/>
+    <note-list :notes="notesToDisplay" @remove="removeNote" @pinNote="pinNote" @changeBGColor="changeBGC" @duplicateNote="duplicateNote" @sendToMail="sendToMail"/>
 
     </section>
   `,
@@ -63,9 +66,31 @@ export default {
             noteService.duplicateNote(noteId)
                 .then((duplicatedNote) => {
                     console.log('hhhhhhhhhhh')
-                        // const idx = this.notes.findIndex((note) => note.id === noteId);
+
                     this.notes.unshift(duplicatedNote)
                 })
+
+        },
+
+        sendToMail(noteId) {
+            // console.log('note', noteId)
+
+            // noteService.get(noteId)
+            //     .then(note => {
+            //         const newEmail = {
+            //             from: 'me',
+            //             to: null,
+            //             cc: null,
+            //             bcc: null,
+            //             subject: note.title,
+            //             // body: note.info,
+            //         }
+
+            //         emailService.addEmail(newEmail)
+            //             // console.log('note', note)
+
+            //     })
+
 
         },
 

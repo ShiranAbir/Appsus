@@ -32,7 +32,7 @@ export default {
 
             </div>
 
-            <button ><i class="fa-solid fa-envelope"></i></button>
+            <button @click="sendToMail(note.id)" ><i class="fa-solid fa-envelope"></i></button>
 
             <button @click="duplicateNote(note.id)"><i class="fa-solid fa-pen-to-square"></i></button>
 
@@ -84,6 +84,10 @@ export default {
         },
         duplicateNote(id) {
             this.$emit('duplicateNote', id)
+        },
+        sendToMail(id) {
+            console.log('noteee')
+            this.$emit('sendToMail', id)
         }
 
     }

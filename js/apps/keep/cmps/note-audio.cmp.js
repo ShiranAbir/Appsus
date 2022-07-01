@@ -5,9 +5,12 @@ export default {
             <div>
             <h1 class="title">{{note.title}}</h1>
 
-            <audio src="note.info.url"></audio>
-                <!-- <img class="input-image" :src="note.info.url" alt=""> -->
-                
+            <!-- <audio src="note.info.url"></audio> -->
+            <audio controls>
+        <source :src="note.info.url" type="audio/ogg">
+       
+      Your browser does not support the audio element.
+      </audio>
             </div>
             
           </section>
