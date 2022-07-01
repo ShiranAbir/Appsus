@@ -10,7 +10,7 @@ export default {
     <add-note @addNewNote="addNewNote" />
     <section class="keep-app" >
    
-    <note-list :notes="notesToDisplay" @remove="removeNote" @pinNote="pinNote" @changeBGC="changeBGC"/>
+    <note-list :notes="notesToDisplay" @remove="removeNote" @pinNote="pinNote" @changeBGColor="changeBGC" @duplicateNote="duplicateNote"/>
 
     </section>
   `,
@@ -21,8 +21,8 @@ export default {
     },
     data() {
         return {
-            notes: null,
-            filterBy: null,
+            notes: [],
+            filterBy: {},
 
         };
     },
@@ -34,6 +34,7 @@ export default {
             })
 
     },
+
     methods: {
         removeNote(id) {
             noteService.removeNote(id)
@@ -42,31 +43,32 @@ export default {
                     this.notes.splice(idx, 1);
                 })
         },
-        pinNote(note) {
-            noteService.pinNote(note)
+        pinNote(noteId) {
+            // this.notes[this.notes.length - 1].isPinned = true
+            noteService.pinNote(noteId)
                 .then(() => {
-                    const idx = this.notes.findIndex((note) => note.id === note.id);
+                    const idx = this.notes.findIndex((note) => note.id === noteId);
                     this.notes[idx].isPinned = !this.notes[idx].isPinned
                 })
-
-
         },
         changeBGC(note, newBGC) {
-            noteService.editNoteBGColor(note, newBGC).then(() => {
-                        const idx = this.notes.findIndex((note) => note.id === id);
-                        this.notes[idx].bGC = newBGC
-                    }
-
-
-                )
-                // noteService.removeNote(id)
-                // .then(() => {
-                //     const idx = this.notes.findIndex((note) => note.id === id);
-                //     this.notes.splice(idx, 1);
-                // })
-
+            noteService.editNoteBGColor(note, newBGC)
+                .then(() => {
+                    const idx = this.notes.findIndex((note) => note.id === id);
+                    this.notes[idx].bGC = newBGC
+                })
+        },
+        duplicateNote(noteId) {
+            // console.log(noteId)
+            noteService.duplicateNote(noteId)
+                .then((duplicatedNote) => {
+                    console.log('hhhhhhhhhhh')
+                        // const idx = this.notes.findIndex((note) => note.id === noteId);
+                    this.notes.unshift(duplicatedNote)
+                })
 
         },
+
         addNewNote(note) {
             console.log('hi jessie')
             noteService.addNote(note)
@@ -75,25 +77,31 @@ export default {
                 })
         },
         filterNote(filterBy) {
-            // console.log('jjjjjjjj')
             this.filterBy = filterBy
         }
     },
+
     computed: {
         notesToDisplay() {
-            if (!this.filterBy) return this.notes
+            // if (!this.filterBy) return this.notes
 
             const { type, title } = this.filterBy
 
             const regex = new RegExp(title, "i")
+            let notes = this.notes
                 // if(noteType&&title)
             if (!type) {
-                return this.notes.filter(note => regex.test(note.title))
+                notes = notes.filter(note => regex.test(note.title))
             } else {
 
-                return this.notes.filter(note => regex.test(note.title) &&
-                    note.type === type)
+                notes = notes.filter(note => regex.test(note.title) && note.type === type)
             }
+            // console.log('notes', notes)
+            let pinnedNotes = notes.filter(note => note.isPinned)
+            let notPinnedNotes = notes.filter(note => !note.isPinned)
+
+            console.log(pinnedNotes.concat(notPinnedNotes))
+            return pinnedNotes.concat(notPinnedNotes)
         }
     },
 };

@@ -6,7 +6,7 @@ _createNotes();
 
 export const noteService = {
     query, //מביא את כל הספרים
-    // get, //שמה איידי ומקבלת את הספר המתאים
+    get, //שמה איידי ומקבלת את הספר המתאים
     // addReview,
     // getEmptyReview,
     // removeReview,
@@ -22,16 +22,39 @@ export const noteService = {
     getEmptyTodoNote,
     editNoteBGColor,
     pinNote,
+    duplicateNote,
 };
+
+function get(noteId) {
+    return storageService.get(NOTES_KEY, noteId)
+}
 
 function editNoteBGColor(note, color) {
     note.bGC = color
     return storageService.put(NOTES_KEY, note)
 }
 
-function pinNote(note) {
-    note.isPinned = !note.isPinned
-    return storageService.put(NOTES_KEY, note)
+function pinNote(noteId) {
+    return get(noteId)
+        .then((note) => {
+
+            note.isPinned = !note.isPinned
+            return storageService.put(NOTES_KEY, note)
+        })
+        // const updateNote = {...note }
+        // updateNote.isPinned = !updateNote.isPinned
+        // return storageService.put(NOTES_KEY, updateNote)
+}
+
+function duplicateNote(noteId) {
+    return get(noteId)
+        .then((note) => {
+            console.log('note', note)
+            return storageService.post(NOTES_KEY, note)
+
+        })
+
+
 }
 
 
@@ -49,7 +72,7 @@ function _createNotes() {
                 id: "n101",
                 title: "Hello",
                 type: "note-txt",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     txt: "Fullstack Me Baby!"
                 },
@@ -61,6 +84,16 @@ function _createNotes() {
                 isPinned: false,
                 info: {
                     vidUrl: "https://www.youtube.com/embed/9YffrCViTVk"
+                }
+
+            },
+            {
+                id: "n111",
+                title: "Audio",
+                type: "note-audio",
+                isPinned: false,
+                info: {
+                    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
                 }
 
             },
@@ -90,7 +123,7 @@ function _createNotes() {
                 id: "n101",
                 title: "I Love You",
                 type: "note-txt",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     txt: "Fullstack Me Baby!"
                 }
