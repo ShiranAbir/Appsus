@@ -6,7 +6,7 @@ _createNotes();
 
 export const noteService = {
     query, //מביא את כל הספרים
-    // get, //שמה איידי ומקבלת את הספר המתאים
+    get, //שמה איידי ומקבלת את הספר המתאים
     // addReview,
     // getEmptyReview,
     // removeReview,
@@ -20,7 +20,42 @@ export const noteService = {
     getEmptyTextNote,
     getEmptyVidNote,
     getEmptyTodoNote,
+    editNoteBGColor,
+    pinNote,
+    duplicateNote,
 };
+
+function get(noteId) {
+    return storageService.get(NOTES_KEY, noteId)
+}
+
+function editNoteBGColor(note, color) {
+    note.bGC = color
+    return storageService.put(NOTES_KEY, note)
+}
+
+function pinNote(noteId) {
+    return get(noteId)
+        .then((note) => {
+
+            note.isPinned = !note.isPinned
+            return storageService.put(NOTES_KEY, note)
+        })
+        // const updateNote = {...note }
+        // updateNote.isPinned = !updateNote.isPinned
+        // return storageService.put(NOTES_KEY, updateNote)
+}
+
+function duplicateNote(noteId) {
+    return get(noteId)
+        .then((note) => {
+            console.log('note', note)
+            return storageService.post(NOTES_KEY, note)
+
+        })
+
+
+}
 
 
 function query() {
@@ -35,14 +70,16 @@ function _createNotes() {
     if (!notes || !notes.length) {
         notes = [{
                 id: "n101",
+                title: "Hello",
                 type: "note-txt",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     txt: "Fullstack Me Baby!"
-                }
+                },
             },
             {
                 id: "n109",
+                title: "Daniel",
                 type: "note-vid",
                 isPinned: false,
                 info: {
@@ -51,7 +88,18 @@ function _createNotes() {
 
             },
             {
+                id: "n111",
+                title: "Audio",
+                type: "note-audio",
+                isPinned: false,
+                info: {
+                    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                }
+
+            },
+            {
                 id: "n110",
+                title: "Pizza",
                 type: "note-vid",
                 isPinned: false,
                 info: {
@@ -61,6 +109,7 @@ function _createNotes() {
             },
             {
                 id: "n102",
+                title: "Dogs",
                 type: "note-img",
                 info: {
                     url: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
@@ -72,14 +121,16 @@ function _createNotes() {
             },
             {
                 id: "n101",
+                title: "I Love You",
                 type: "note-txt",
-                isPinned: true,
+                isPinned: false,
                 info: {
                     txt: "Fullstack Me Baby!"
                 }
             },
             {
                 id: "n102",
+                title: "Cupssss",
                 type: "note-img",
                 info: {
                     url: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
@@ -89,12 +140,13 @@ function _createNotes() {
             },
             {
                 id: "n103",
+                title: "I hate Cleaning",
                 type: "note-todos",
                 info: {
                     label: "Get my stuff together",
                     todos: [
-                        { txt: "Driving liscence", doneAt: null },
-                        { txt: "Coding power", doneAt: 187111111 }
+                        { txt: "Driving liscence", isDone: false },
+                        { txt: "Coding power", isDone: false }
                     ]
                 }
             }
@@ -114,6 +166,7 @@ function addNote(note) {
 function getEmptyTextNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-txt",
         isPinned: false,
         info: {
@@ -125,10 +178,10 @@ function getEmptyTextNote() {
 function getEmptyImgNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-img",
         info: {
             url: "",
-            title: ""
         },
 
     }
@@ -137,6 +190,7 @@ function getEmptyImgNote() {
 function getEmptyVidNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-vid",
         isPinned: false,
         info: {
@@ -150,13 +204,14 @@ function getEmptyVidNote() {
 function getEmptyTodoNote() {
     return {
         id: utilService.makeId(),
+        title: null,
         type: "note-todos",
         info: {
             label: "Get my stuff together",
 
             todos: [
-                { txt: "Driving liscence", doneAt: null },
-                { txt: "Coding power", doneAt: 187111111 }
+                { txt: "Driving liscence", isDone: false },
+                { txt: "Coding power", isDone: false }
             ]
         }
     }
@@ -166,6 +221,4 @@ function getEmptyTodoNote() {
 
 function removeNote(noteId) {
     return storageService.remove(NOTES_KEY, noteId)
-
-
 }

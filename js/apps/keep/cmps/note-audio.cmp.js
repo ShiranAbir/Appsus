@@ -1,14 +1,15 @@
 export default {
     template: `
           <section>
-          
+
             <div>
             <h1 class="title">{{note.title}}</h1>
-                {{note.info.txt}}
 
+            <audio src="note.info.url"></audio>
+                <!-- <img class="input-image" :src="note.info.url" alt=""> -->
+                
             </div>
-               
-           
+            
           </section>
           `,
     props: ["note"],
@@ -19,11 +20,12 @@ export default {
     },
     methods: {
 
+
     },
     computed: {
 
     },
     created() {
-        console.log('infoooo:')
+
     },
 }

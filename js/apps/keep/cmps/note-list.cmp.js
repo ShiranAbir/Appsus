@@ -5,6 +5,7 @@ import noteTxt from "./note-text.cmp.js";
 import noteImg from "./note-img.cmp.js";
 import noteVid from "./note-vid.cmp.js";
 import noteTodos from "./note-todos.cmp.js";
+import noteAudio from "./note-audio.cmp.js";
 
 
 export default {
@@ -15,22 +16,25 @@ export default {
 
          <div class="note-container" :style="readStyle" v-for="note in notes">
          <component :is="note.type"
-         :info="note.info"> 
+         :note="note" :style="{'background-color':note.bGC}" > 
           
 
          </component> 
          <div class="edit-btn-container">
-         <button ><i class="fa-solid fa-thumbtack"></i></button>
+
+
+         <button @click="pinNote(note.id)" ><i class="fa-solid fa-thumbtack"></i></button>
 
             <div class="color-input-container">
-                <input class="color-input" type="color" v-model="bGColor">
+
+                <input class="color-input" type="color" @input="changeBGC(note)" v-model="colorInput">
                 <i class="fa-solid fa-palette"></i>
 
             </div>
 
-            <button><i class="fa-solid fa-envelope"></i></button>
+            <button ><i class="fa-solid fa-envelope"></i></button>
 
-            <button><i class="fa-solid fa-pen-to-square"></i></button>
+            <button @click="duplicateNote(note.id)"><i class="fa-solid fa-pen-to-square"></i></button>
 
             <button  @click="remove(note.id)"><i class="fa-solid fa-trash-can"></i></button>
             
@@ -48,29 +52,39 @@ export default {
         noteImg,
         noteVid,
         noteTodos,
+        noteAudio,
     },
     data() {
         return {
             notes: this.notes,
-            bGColor: null,
+            colorInput: '#ffffff',
 
         };
     },
     computed: {
         readStyle() {
             return {
-                'background-color': this.bGColor || 'white',
                 width: '200px',
                 margin: '10px',
             }
-        }
+        },
+
     },
     methods: {
         remove(id) {
             this.$emit('remove', id)
-        }
-    },
-    created() {},
-    watch: {}
+        },
+        changeBGC(note) {
+            const newBGC = this.colorInput
+            this.$emit('changeBGColor', note, newBGC)
 
-};
+        },
+        pinNote(id) {
+            this.$emit('pinNote', id)
+        },
+        duplicateNote(id) {
+            this.$emit('duplicateNote', id)
+        }
+
+    }
+}

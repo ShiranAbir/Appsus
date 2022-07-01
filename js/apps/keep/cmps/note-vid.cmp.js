@@ -3,8 +3,9 @@ export default {
           <section>
           
             <div>
-                <!-- {{info.url}} -->
-                <iframe width="200" height="126" :src="info.vidUrl">
+            <h1 class="title">{{note.title}}</h1>
+
+                <iframe width="200" height="126" :src="note.info.vidUrl">
                </iframe>
                 
 
@@ -14,7 +15,7 @@ export default {
          
           </section>
           `,
-    props: ["info"],
+    props: ["note"],
     data() {
         return {
 
