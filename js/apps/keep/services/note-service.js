@@ -80,11 +80,11 @@ function _createNotes() {
             },
             {
                 id: "n109",
-                title: "Daniel",
+                title: "Video game",
                 type: "note-vid",
                 isPinned: false,
                 info: {
-                    vidUrl: "https://www.youtube.com/embed/9YffrCViTVk"
+                    vidUrl: "https://www.youtube.com/embed/ki3jIHa1M2s"
                 }
 
             },
@@ -110,15 +110,13 @@ function _createNotes() {
             },
             {
                 id: "n102",
-                title: "Dogs",
+                title: "My MOMs Elephant",
                 type: "note-img",
                 info: {
-                    url: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
+                    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Desert_elephant_%28Loxodonta_africana%29_male.jpg/375px-Desert_elephant_%28Loxodonta_africana%29_male.jpg",
                     title: "Bobi and Me"
                 },
-                style: {
-                    backgroundColor: "#00d"
-                }
+
             },
             {
                 id: "n101",
