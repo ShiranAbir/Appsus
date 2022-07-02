@@ -29,6 +29,7 @@ export default {
         return {
             newEmail:{
                 from: 'Me',
+				fromEmail: 'user@appsus.com',
                 to: null,
                 cc: null,
                 bcc: null,

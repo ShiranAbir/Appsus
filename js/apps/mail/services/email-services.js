@@ -150,8 +150,8 @@ function loadEmails() {
         to: 'user@appsus.com',
         removedAt: 1656745045000,
     }, {
-        from: 'shiran',
-        fromEmail:'yair@appsus.com',
+        from: 'Shiran',
+        fromEmail:'shiran@appsus.com',
         id: 'e102',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -160,8 +160,8 @@ function loadEmails() {
         to: 'momo@momo.com',
         removedAt: 1581133950594,
     }, {
-        from: 'tzlil',
-        fromEmail:'yair@appsus.com',
+        from: 'Tzlil',
+        fromEmail:'tzlil@appsus.com',
         id: 'e103',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -169,8 +169,8 @@ function loadEmails() {
         sentAt: 1656745045000,
         to: 'user@appsus.com'
     }, {
-        from: 'guy',
-        fromEmail:'yair@appsus.com',
+        from: 'Guy',
+        fromEmail:'guy@appsus.com',
         id: 'e104',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -178,8 +178,8 @@ function loadEmails() {
         sentAt: 1656745045000,
         to: 'user@appsus.com'
     }, {
-        from: 'moshe',
-        fromEmail:'yair@appsus.com',
+        from: 'Moshe',
+        fromEmail:'moshe@appsus.com',
         id: 'e105',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -187,8 +187,8 @@ function loadEmails() {
         sentAt: 1556633936594,
         to: 'user@appsus.com'
     }, {
-        from: 'aviv',
-        fromEmail:'yair@appsus.com',
+        from: 'Aviv',
+        fromEmail:'aviv@appsus.com',
         id: 'e124',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -196,8 +196,8 @@ function loadEmails() {
         sentAt: 1588133938594,
         to: 'user@appsus.com'
     }, {
-        from: 'or',
-        fromEmail:'yair@appsus.com',
+        from: 'Or',
+        fromEmail:'or@appsus.com',
         id: 'e106',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -205,8 +205,8 @@ function loadEmails() {
         sentAt: 1551133970594,
         to: 'user@appsus.com'
     }, {
-        from: 'dor',
-        fromEmail:'yair@appsus.com',
+        from: 'Dor',
+        fromEmail:'dor@appsus.com',
         id: 'e107',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -214,8 +214,8 @@ function loadEmails() {
         sentAt: 1551553936594,
         to: 'user@appsus.com'
     }, {
-        from: 'mor',
-        fromEmail:'yair@appsus.com',
+        from: 'Mor',
+        fromEmail:'mor@appsus.com',
         id: 'e108',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -223,8 +223,8 @@ function loadEmails() {
         sentAt: 1556634930594,
         to: 'user@appsus.com'
     }, {
-        from: 'haim',
-        fromEmail:'yair@appsus.com',
+        from: 'Haim',
+        fromEmail:'haim@appsus.com',
         id: 'e109',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -232,44 +232,44 @@ function loadEmails() {
         sentAt: 1551133111594,
         to: 'user@appsus.com'
     }, {
-        from: 'cohen',
-        fromEmail:'yair@appsus.com',
+        from: 'Cohen',
+        fromEmail:'cohen@appsus.com',
         id: 'e110',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
-        isRead: false,
+        isRead: true,
         sentAt: 1554443730594,
-        to: 'user@appsus.com'
+        to: 'yair@appsus.com'
     }, {
-        from: 'shalom',
-        fromEmail:'yair@appsus.com',
+        from: 'Shalom',
+        fromEmail:'shalom@appsus.com',
         id: 'e111',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
-        isRead: false,
+        isRead: true,
         sentAt: 1551155550694,
-        to: 'user@appsus.com'
+        to: 'yair@appsus.com'
     }, {
-        from: 'mom',
-        fromEmail:'yair@appsus.com',
+        from: 'Mom',
+        fromEmail:'revital@appsus.com',
         id: 'e112',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
-        isRead: false,
+        isRead: true,
         sentAt: 1554443970594,
-        to: 'user@appsus.com'
+        to: 'yair@appsus.com'
     }, {
-        from: 'dad',
-        fromEmail:'yair@appsus.com',
+        from: 'Dad',
+        fromEmail:'yoni@appsus.com',
         id: 'e113',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
-        isRead: false,
+        isRead: true,
         sentAt: 1577713393029,
-        to: 'user@appsus.com'
+        to: 'yair@appsus.com'
     }, {
-        from: 'shani',
-        fromEmail:'yair@appsus.com',
+        from: 'Shani',
+        fromEmail:'shani@appsus.com',
         id: 'e114',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -277,8 +277,8 @@ function loadEmails() {
         sentAt: 1651463845000,
         to: 'user@appsus.com'
     }, {
-        from: 'sharon',
-        fromEmail:'yair@appsus.com',
+        from: 'Sharon',
+        fromEmail:'sharon@appsus.com',
         id: 'e115',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -286,8 +286,8 @@ function loadEmails() {
         sentAt: 1551666630584,
         to: 'user@appsus.com'
     }, {
-        from: 'yael',
-        fromEmail:'yair@appsus.com',
+        from: 'Yael',
+        fromEmail:'yael@appsus.com',
         id: 'e116',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -295,8 +295,8 @@ function loadEmails() {
         sentAt: 1577733970594,
         to: 'user@appsus.com'
     }, {
-        from: 'sheli',
-        fromEmail:'yair@appsus.com',
+        from: 'Sheli',
+        fromEmail:'sheli@appsus.com',
         id: 'e117',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -304,8 +304,8 @@ function loadEmails() {
         sentAt: 1551133922294,
         to: 'user@appsus.com'
     }, {
-        from: 'itay',
-        fromEmail:'yair@appsus.com',
+        from: 'Yossi',
+        fromEmail:'yossi@appsus.com',
         id: 'e118',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -313,8 +313,8 @@ function loadEmails() {
         sentAt: 1551144420594,
         to: 'user@appsus.com'
     }, {
-        from: 'avner',
-        fromEmail:'yair@appsus.com',
+        from: 'Avner',
+        fromEmail:'avner@appsus.com',
         id: 'e119',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -322,8 +322,8 @@ function loadEmails() {
         sentAt: 1551132330594,
         to: 'user@appsus.com'
     }, {
-        from: 'yaheli',
-        fromEmail:'yair@appsus.com',
+        from: 'Yaeli',
+        fromEmail:'yaeli@appsus.com',
         id: 'e120',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -331,8 +331,8 @@ function loadEmails() {
         sentAt: 1551258960594,
         to: 'user@appsus.com'
     }, {
-        from: 'kfir',
-        fromEmail:'yair@appsus.com',
+        from: 'Kfir',
+        fromEmail:'kfir@appsus.com',
         id: 'e121',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -340,8 +340,8 @@ function loadEmails() {
         sentAt: 1551365930594,
         to: 'user@appsus.com'
     }, {
-        from: 'rotem',
-        fromEmail:'yair@appsus.com',
+        from: 'Rotem',
+        fromEmail:'rotem@appsus.com',
         id: 'e122',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
@@ -349,8 +349,8 @@ function loadEmails() {
         sentAt: 1552589130594,
         to: 'user@appsus.com'
     }, {
-        from: 'tomer',
-        fromEmail:'yair@appsus.com',
+        from: 'Tomer',
+        fromEmail:'tomer@appsus.com',
         id: 'e123',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',

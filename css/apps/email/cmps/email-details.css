@@ -22,8 +22,8 @@
     position: absolute;
     display: flex;
     left: 100px;
-    width: 1050px;
-    height: 1000px;
+    width: 100%;
+    height: 50%;
 }
 
 .read-email li{
@@ -35,13 +35,17 @@
     color: #555;
     font-size: 1rem;
     letter-spacing: .3px;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .details-date{
     font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     position: absolute;
     display: flex;
-    right: 0;
+    right: 150px;
     top:80px;
+}
+
+.details-body {
+    white-space: pre;
 }
