@@ -10,7 +10,7 @@
     display: grid; 
     cursor: pointer;
     grid-auto-columns: 1fr; 
-    grid-template-columns: repeat(20,1fr); 
+    grid-template-columns: repeat(20,1fr);
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
@@ -47,6 +47,7 @@
    position: absolute;
    right: 30px;
    padding: 10px;
+   min-width: 10px;
 }
 
 .setread-email-btn{
@@ -66,6 +67,7 @@
    position: absolute;
    right: 30px;
    padding: 10px;
+   min-width: 10px;
 }
 
   .email a {
@@ -94,20 +96,24 @@
     grid-area: from;
     margin-left: 1em;
     font-weight: 100;
+    width: 12em;
  }
 
   .subject {
      grid-area: subject;
      font-weight: 100;
+     min-width: 25em;
 }
 
   .body {
      grid-area: body;
      white-space: nowrap;
+     min-width: 30em;
      }
 
   .date { 
     grid-area: date;
+    min-width: 5em;
  }
 
  .bold-unread{
