@@ -17,6 +17,10 @@ export default {
    
     <note-list :notes="notesToDisplay" @remove="removeNote" @pinNote="pinNote" @changeBGColor="changeBGC" @duplicateNote="duplicateNote" @sendToMail="sendToMail"/>
 
+    <div class="keep-footer">
+            <p>Created and designed by Shiran Abir & Adi Birenshtock © 2022</p>
+        </div>
+
     </section>
   `,
     components: {

@@ -1,4 +1,4 @@
-.home-page{
+.home-page {
     height: 100%;
 }
 
@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.home-page-main-logo{
+.home-page-main-logo {
     position: absolute;
     display: flex;
     width: 300px;
@@ -17,31 +17,31 @@
     cursor: pointer;
 }
 
-.sub-title{
+.sub-title {
     font-size: 2rem;
     text-align: center;
     height: 10rem;
     line-height: 150px;
-    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
 }
 
-.home-main-login{
+.home-main-login {
     position: absolute;
     display: flex;
     right: 30px;
     width: 50px;
     height: 50px;
-    top:30px;
+    top: 30px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.home-main-login:hover{
+.home-main-login:hover {
     box-shadow: -1px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%), 0px 5px 5px -3px rgb(0 0 0 / 20%);
 }
 
-.home-email-btn{
+.home-email-btn {
     background-image: url('apps/email/imgs/google_gmail_icon.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -54,7 +54,7 @@
     list-style: none;
 }
 
-.home-keep-btn{
+.home-keep-btn {
     background-image: url('apps/email/imgs/google_keep_icon.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -67,7 +67,7 @@
     list-style: none;
 }
 
-.home-books-btn{
+.home-books-btn {
     background-image: url('apps/email/imgs/google_play_books_icon.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -80,21 +80,20 @@
     list-style: none;
 }
 
-
-.features-container{
+.features-container {
     display: flex;
     border-bottom: 1px solid #f1f3f4;
-    padding-bottom:50px ;
+    padding-bottom: 50px;
 }
 
-.about{
+.about {
     background-color: rgb(255, 255, 255);
     height: 300px;
     position: relative;
     display: flex;
 }
 
-.about-adi{
+.about-adi {
     background-image: url(apps/email/imgs/adi.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -106,7 +105,7 @@
     list-style: none;
 }
 
-.about-shiran{
+.about-shiran {
     background-image: url(apps/email/imgs/shiran.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -118,28 +117,27 @@
     list-style: none;
 }
 
-.about-title{
+.about-title {
     text-align: center;
     margin: auto;
-    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
     margin-top: 50px;
     font-size: 1.5rem;
 }
 
-.main-page-footer{
+.main-page-footer {
     position: absolute;
-    display:flex;
+    display: flex;
     height: 200px;
     width: 100vw;
     bottom: 0;
     border-top: 1px solid #f1f3f4;
 }
 
-.main-page-footer p{
+.main-page-footer p {
     text-align: center;
     margin: auto;
-    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
 }
-

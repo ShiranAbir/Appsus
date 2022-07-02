@@ -1,7 +1,7 @@
 export default {
     template: `
           <section>
-          <h1 class="title">{{note.title}}</h1>
+          <h1 class="note-title">{{note.title}}</h1>
 
           
             <div v-for="infoObj in note.info.todos"  >
@@ -31,8 +31,10 @@ export default {
         readStyle() {
             return {
                 // 'text-decoration': ? 'line-through' : 'none',
-                'text-align': 'left',
-                width: '150px'
+                // 'text-align': 'left',
+                width: '150px',
+                // 'margin': '20px',
+                'margin-left': '20px',
 
 
 
