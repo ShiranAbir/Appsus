@@ -10,6 +10,7 @@
 
 .title-input {
     margin-left: 20px;
+    /* outline: none; */
     border: none;
 }
 
@@ -28,22 +29,23 @@
 /* .input-btn {} */
 
 .input-btn-container>*:hover {
-    background-color: rgb(199, 206, 189);
+    background-color: rgba(173, 177, 168, 0.525);
 }
 
 
 /* input trile */
 
 .input-form {
-    position: relative;
-    width: 600px;
-    margin: 32px, auto 50px auto;
+    margin: auto;
+    /* position: relative; */
+    width: 700px;
+    /* margin: 32px, auto 50px auto; */
     background-color: fff(243, 248, 233);
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 7px;
     /* box-shadow: 0 1px gray */
     /* border: 1px solid rgb(249, 244, 244); */
-    box-shadow: 0 0 5px 0.1px;
+    box-shadow: 0 0 2px 0.1px;
 }
 
 .input-form input {
@@ -67,31 +69,15 @@
     margin-left: 20px;
 }
 
-.title {
-    font-size: large;
-    border: none;
+.note-title {
+    font-size: medium;
+    /* background-color: antiquewhite; */
+    width: 180px;
+    margin-left: 20px;
+    /* border: none; */
 }
 
-
-/* filter container */
-
-.note-filter-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.filter-text-container {
-    display: flex;
-    justify-self: left;
-}
-
-.search-input {
-    width: 300px;
-    height: 30px;
-}
-
-.select-input {
-    width: 150px;
-    height: 30px;
+.audio {
+    width: 200px;
+    min-height: 20px;
 }

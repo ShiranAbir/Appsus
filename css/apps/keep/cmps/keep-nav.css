@@ -1,0 +1,32 @@
+.keep-nav-bar {
+    /* background-color: rgb(99, 99, 203); */
+    border: 1px solid rgb(218, 208, 208);
+    position: absolute;
+    z-index: 1;
+    height: 90vh;
+    width: 140px;
+    top: 95px;
+}
+
+.keep-nav-bar>* {
+    text-align: start;
+    margin: 0;
+    padding: 15px 0 15px 0;
+    /* border: 1px rgb(230, 185, 132) solid; */
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+}
+
+.keep-nav-bar>*:hover {
+    background-color: #feefc3;
+    /* box-shadow: 0 5px 0 0.1px; */
+}
+
+.btn-mail-nav {
+    padding: 15px 0 15px 0;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background-color: #feefc300;
+    text-align: left;
+}

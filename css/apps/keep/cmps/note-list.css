@@ -1,6 +1,8 @@
 .note-list-container {
     display: flex;
     flex-wrap: wrap;
+    margin: 100px 0 0 250px;
+    /* width: 90%; */
     /* display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
     grid-auto-rows: auto;
@@ -9,7 +11,7 @@
 
 .input-image {
     /* height: 100px; */
-    width: 150px;
+    width: 190px;
     padding: 5px;
     border-radius: 10px;
 }
@@ -19,10 +21,11 @@
 
 .note-container {
     position: relative;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    border-radius: 15px;
+    border-radius: 7px;
     align-self: flex-start;
+    box-shadow: 0 0 2px 0px;
     /* float: left; */
     /* float: inline-start; */
     /* height: auto; */
@@ -58,23 +61,24 @@
 }
 
 .edit-btn-container {
-    position: absolute;
-    bottom: 0px;
+    display: block;
+    /* position: absolute;
+    bottom: 0px; */
     margin: 0;
-    padding: 0px;
+    padding: 3px 1px 3px 3px;
     align-items: center;
     /* margin-right: 0px; */
     width: 100%;
     display: flex;
     justify-content: center;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 7px 7px;
     /* padding-left: 30px;
     padding-right: 30px; */
 }
 
 .edit-btn-container:hover {
     background-color: rgba(146, 139, 144, 0.37);
-    padding: 3px;
+    /* padding: 0 3px 3px 3px; */
 }
 
 .edit-btn-container>* {
@@ -85,30 +89,15 @@
     margin: 0px;
     cursor: pointer;
     border-radius: 50px;
-    color: rgb(119, 114, 114);
+    color: rgb(88, 79, 79);
 }
 
 .edit-btn-container>* :hover {
     border: none;
     height: 20px;
     width: 25px;
-    background-color: rgba(255, 0, 89, 0.895);
+    background-color: rgba(177, 21, 76, 0.895);
     margin: 0px;
     cursor: pointer;
     border-radius: 50px;
-}
-
-
-/* filter */
-
-.note-filter-container {
-    position: relative;
-    width: 600px;
-    margin: 32px, auto 50px auto;
-    background-color: fff(243, 248, 233);
-    padding: 7px;
-    border-radius: 7px;
-    /* box-shadow: 0 1px gray */
-    /* border: 1px solid rgb(249, 244, 244); */
-    box-shadow: 0 0 5px 0.1px;
 }

@@ -3,7 +3,7 @@ export default {
           <section>
           
             <div>
-            <h1 class="title">{{note.title}}</h1>
+            <h1 class="note-title">{{note.title}}</h1>
                 {{note.info.txt}}
 
             </div>

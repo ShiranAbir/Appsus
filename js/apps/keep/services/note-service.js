@@ -23,6 +23,7 @@ export const noteService = {
     editNoteBGColor,
     pinNote,
     duplicateNote,
+    getEmptyAudioNote,
 };
 
 function get(noteId) {
@@ -214,6 +215,20 @@ function getEmptyTodoNote() {
                 { txt: "Coding power", isDone: false }
             ]
         }
+    }
+
+}
+
+function getEmptyAudioNote() {
+    return {
+        id: utilService.makeId(),
+        title: null,
+        type: "note-audio",
+        isPinned: false,
+        info: {
+            url: "",
+        }
+
     }
 
 }
