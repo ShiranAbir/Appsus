@@ -1,4 +1,3 @@
-console.log('hii')
 import { router } from "./router.js"
 
 

@@ -1,0 +1,60 @@
+
+.sub-nav{
+    height: 32px;
+    padding-bottom:5px ;
+    padding-right: 0px;
+    display: flex;
+    margin-left: 72px;
+    margin-right:0px ;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.sortByDate{
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    height:32px ;
+    margin: auto;
+    margin-left: 130px;
+    background: #f1f3f4;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: 1rem Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: auto;
+    color: #5f6368;
+    text-align: center;
+    line-height: 28px;
+}
+
+.filterEmails{
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    height:32px ;
+    margin: auto;
+    background: #f1f3f4;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: 1rem Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: auto;
+    color: #5f6368;
+    text-align: center;
+}
+
+.filterEmails:focus{
+    outline: none;
+}

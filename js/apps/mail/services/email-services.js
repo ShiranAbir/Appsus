@@ -61,7 +61,7 @@ function setAsRead(id) {
 }
 
 function addToTrash(emailId) {
-    modifyEmail(emailId, 'removedAt', new Date())
+    return modifyEmail(emailId, 'removedAt', new Date()).then(() => gEmails)
 }
 
 function query(criteria) {
@@ -98,6 +98,14 @@ function query(criteria) {
             })
         }
 
+        // Sort by
+        if (criteria.sortBy === "date") {
+            emails = emails.sort((x, y) => {
+                if (criteria.sortOrderAscending) return x.sentAt - y.sentAt
+                return y.sentAt - x.sentAt
+            })
+        }
+
         return Promise.resolve(emails)
     })
 }
@@ -123,57 +131,231 @@ function addEmail(newEmail) {
 }
 
 function deleteEmail(id) {
-    var idx = gEmails.findIndex(email => {
-        return email.id === id
-    })
+    var idx = gEmails.findIndex(email => email.id === id)
     gEmails.splice(idx, 1)
     utilService.saveToStorage(EMAILS_KEY, gEmails)
-    location.reload()
-    return Promise.resolve()
+    
+    return Promise.resolve(gEmails)
 }
 
 function loadEmails() {
     gEmails = [{
         from: 'Yair',
+        fromEmail:'yair@appsus.com',
         id: 'e101',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
         isRead: false,
-        sentAt: 1551133930594,
+        sentAt: 1551143930594,
         to: 'user@appsus.com',
-        removedAt: 1551133950594,
+        removedAt: 1656745045000,
     }, {
-        from: 'Yair',
+        from: 'shiran',
+        fromEmail:'yair@appsus.com',
         id: 'e102',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
         isRead: false,
-        sentAt: 1551133930594,
+        sentAt: 1551133930694,
         to: 'momo@momo.com',
-        removedAt: 1551133950594,
+        removedAt: 1581133950594,
     }, {
-        from: 'Yair',
+        from: 'tzlil',
+        fromEmail:'yair@appsus.com',
         id: 'e103',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
         isRead: false,
-        sentAt: 1551133930594,
+        sentAt: 1656745045000,
         to: 'user@appsus.com'
     }, {
-        from: 'Yair',
+        from: 'guy',
+        fromEmail:'yair@appsus.com',
         id: 'e104',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
         isRead: false,
-        sentAt: 1551133930594,
+        sentAt: 1656745045000,
         to: 'user@appsus.com'
     }, {
-        from: 'Yair',
+        from: 'moshe',
+        fromEmail:'yair@appsus.com',
         id: 'e105',
         subject: 'Miss you!',
         body: 'Would love to catch up sometimes',
         isRead: false,
-        sentAt: 1551133930594,
+        sentAt: 1556633936594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'aviv',
+        fromEmail:'yair@appsus.com',
+        id: 'e124',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1588133938594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'or',
+        fromEmail:'yair@appsus.com',
+        id: 'e106',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551133970594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'dor',
+        fromEmail:'yair@appsus.com',
+        id: 'e107',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551553936594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'mor',
+        fromEmail:'yair@appsus.com',
+        id: 'e108',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1556634930594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'haim',
+        fromEmail:'yair@appsus.com',
+        id: 'e109',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551133111594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'cohen',
+        fromEmail:'yair@appsus.com',
+        id: 'e110',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1554443730594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'shalom',
+        fromEmail:'yair@appsus.com',
+        id: 'e111',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551155550694,
+        to: 'user@appsus.com'
+    }, {
+        from: 'mom',
+        fromEmail:'yair@appsus.com',
+        id: 'e112',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1554443970594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'dad',
+        fromEmail:'yair@appsus.com',
+        id: 'e113',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1577713393029,
+        to: 'user@appsus.com'
+    }, {
+        from: 'shani',
+        fromEmail:'yair@appsus.com',
+        id: 'e114',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1651463845000,
+        to: 'user@appsus.com'
+    }, {
+        from: 'sharon',
+        fromEmail:'yair@appsus.com',
+        id: 'e115',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551666630584,
+        to: 'user@appsus.com'
+    }, {
+        from: 'yael',
+        fromEmail:'yair@appsus.com',
+        id: 'e116',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1577733970594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'sheli',
+        fromEmail:'yair@appsus.com',
+        id: 'e117',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551133922294,
+        to: 'user@appsus.com'
+    }, {
+        from: 'itay',
+        fromEmail:'yair@appsus.com',
+        id: 'e118',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551144420594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'avner',
+        fromEmail:'yair@appsus.com',
+        id: 'e119',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551132330594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'yaheli',
+        fromEmail:'yair@appsus.com',
+        id: 'e120',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551258960594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'kfir',
+        fromEmail:'yair@appsus.com',
+        id: 'e121',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551365930594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'rotem',
+        fromEmail:'yair@appsus.com',
+        id: 'e122',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1552589130594,
+        to: 'user@appsus.com'
+    }, {
+        from: 'tomer',
+        fromEmail:'yair@appsus.com',
+        id: 'e123',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1553265930194,
         to: 'user@appsus.com'
     }]
 }

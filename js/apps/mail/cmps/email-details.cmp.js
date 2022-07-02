@@ -2,11 +2,12 @@ import {emailService} from "../services/email-services.js"
 // import { noteService } from "../../keep/services/note-service.js"
 
 export default {
+    props: ["emailId"],
     template: `
-      <section v-if="email">
+      <section class="read-email" v-if="email">
             <li>
                 <p class="details-subject">{{email.subject}}</p>
-                <p class="details-from">{{email.from}}</p>          
+                <p class="details-from">{{email.from}} <span class="details-from-email">&lt;{{email.fromEmail}}&gt;</span></p>          
                 <p class="details-date">{{formatSentDate(email.sentAt)}}</p>       
                 <p class="details-body">{{email.body}}</p>
                 <!-- <button @click="saveToKeep">Save as Note</button> -->
@@ -24,8 +25,7 @@ export default {
     },
     methods: {
         getEmail() {
-            const emailId = this.$route.params.emailId
-            emailService.getEmailById(emailId)
+            emailService.getEmailById(this.emailId)
             .then((email) => {
                 return emailService.modifyEmail(email.id,'isRead',true)
             })

@@ -8,8 +8,9 @@ export default {
                 <p class="from">{{email.from}}</p>
                 <p class="subject">{{email.subject}}</p>
                 <p class="body">{{email.body}}</p>
-                <div @click.stop.prevent="removeEmail(email.id)" class="delete-email-btn"></div>
-                <div @click.stop.prevent="toggleIsRead(email.id)" class="setread-email-btn"></div>
+                <p class="date">{{formatSentDate(email.sentAt)}}</p>
+                <div @click.stop.prevent="removeEmail(email.id)" class="round-hover-list delete-email-btn"></div>
+                <div @click.stop.prevent="toggleIsRead(email.id)" class="round-hover-list setread-email-btn"></div>
             </li>
       </section>
   `,
@@ -18,7 +19,7 @@ export default {
     },
     methods: {
         removeEmail(id){
-            this.$emit('deleteEmail', id)
+            this.$emit('deleteEmail', id, this.email.isRead)
         },
         toggleIsRead(id){
             emailService.setAsRead(id).then(() => {
@@ -26,10 +27,25 @@ export default {
                 this.$emit('toggleIsRead', !this.email.isRead)
             })
         },
+        formatSentDate(sentAt){
+            const date = new Date(sentAt)
+            const now = new Date()
+
+            // Same day, show only time
+            if (date.toDateString() === now.toDateString()) {
+                return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            }
+            // Same year, show only month and day
+            if(date.getFullYear() === now.getFullYear()){
+                return date.toLocaleString("en-US", {month: "short", day:"numeric"})
+            }
+            // Use UK here because of dd/mm/yyyy instead of US mm/dd/yyyy
+            return date.toLocaleDateString("en-UK")
+        },
     },
     computed: {
         emailClass(){
             return (this.email.isRead) ? 'grey' : 'white'
-        }
+        },
     },
 }

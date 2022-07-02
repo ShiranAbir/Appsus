@@ -1,3 +1,8 @@
+.email-list{
+   background-color: rgb(255, 255, 255);
+   height: 100vh;
+}
+
 .email li {
    position: relative;
     display: grid; 
@@ -7,7 +12,7 @@
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "from from subject subject subject subject subject body body body body body body body body . . . delete read";
+      "from from subject subject subject subject subject body body body body body body body body . delete read date date";
    color: #202124; 
    box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
    font-weight: 700;
@@ -17,7 +22,13 @@
    margin-left: 72px;
   }
 
-  .delete-email-btn{
+.round-hover-list:hover {
+   background-color: #eee;
+   border-radius: 50%;
+   opacity: 1;
+}
+
+.delete-email-btn{
    background-image: url(../imgs/delete-email.png);
    background-position: center;
    background-repeat: no-repeat;
@@ -33,7 +44,7 @@
    grid-area: delete;
    position: absolute;
    right: 30px;
-   top: 10px;
+   padding: 10px;
 }
 
 .setread-email-btn{
@@ -52,11 +63,16 @@
    grid-area: read;
    position: absolute;
    right: 30px;
-   top: 10px;
+   padding: 10px;
 }
 
   .email a {
    text-decoration: none!important;
+  }
+
+  .date{
+   grid-area: date;
+   text-align: center;
   }
 
   .body{

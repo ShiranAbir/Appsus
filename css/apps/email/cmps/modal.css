@@ -1,0 +1,57 @@
+
+.modal{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 72px;
+    height: 100vh;
+    border-right: 1px solid #f1f3f4;
+}
+
+.round-hover-modal:hover {
+    background-color: #eee;
+    border-radius: 50%;
+ }
+
+.missKeep-btn{
+    background-image: url(../imgs/p2_8f3487b5.png);
+    background-position: 0 -1173px;
+    background-size: 64px 3169px;
+    vertical-align: top;
+    display: inline-block;
+    height: 64px;    
+    width: 64px;
+    position: absolute;
+    display: flex;
+    left: 4px;
+    top:190px;
+}
+
+.home-btn{
+    background-image: url(../imgs/7115252_google_logo_new_home_icon.png);
+    background-repeat: no-repeat;
+    background-size: 48px;
+    background-position-x: center;
+    background-position-y: 0px;
+    height: 48px;    
+    width: 48px;
+    position: absolute;
+    display: flex;
+    left: 8px;
+    padding: 3px;
+    top: 120px;
+
+}
+
+.close-modal{
+    color: #5f6368;
+    opacity: 1;
+    fill: currentColor;
+    position: absolute;
+    left: 12px;
+    top: 45px;
+    padding: 8px;
+    cursor: pointer;
+}
+

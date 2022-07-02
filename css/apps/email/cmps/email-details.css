@@ -1,6 +1,6 @@
 .details-subject {
     font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    font-size: 1.575rem;
+    font-size: 2rem;
     font-variant-ligatures: no-contextual;
     color: #202124;
     font-weight: 500;
@@ -14,4 +14,34 @@
     line-height: 20px;
     font-weight: bold;
     margin-left: 0;
+}
+
+.read-email{
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    display: flex;
+    left: 100px;
+    width: 1050px;
+    height: 1000px;
+}
+
+.read-email li{
+    list-style: none;
+}
+
+.details-from-email{
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    color: #555;
+    font-size: 1rem;
+    letter-spacing: .3px;
+    font-weight: 100;
+}
+
+.details-date{
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    position: absolute;
+    display: flex;
+    right: 0;
+    top:80px;
 }
