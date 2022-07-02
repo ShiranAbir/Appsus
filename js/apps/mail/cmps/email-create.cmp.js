@@ -12,8 +12,6 @@ export default {
             </div>
             <div class="form-all-input">
                 <input v-model="newEmail.to" class="form-input form-to" type="text" placeholder="To:" />
-                <input v-model="newEmail.cc" class="form-input" type="text" placeholder="Cc:" />
-                <input v-model="newEmail.bcc" class="form-input" type="text" placeholder="Bcc:" />
                 <input v-model="newEmail.subject" class="form-input" type="text" placeholder="Subject:" />          
                 <textarea v-model="newEmail.body" class="form-input" rows="22"></textarea>
             </div>  

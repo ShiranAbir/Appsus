@@ -4,11 +4,11 @@ import emailFooter from "../cmps/footer.cmp.js"
 
 export default {
   template: `
-    <email-footer></email-footer>
     <email-folder-list @toggleModal="toggleModal" :folder="folder"/>
     <transition name="slide-fade">
       <modal @closeModal="closeModal" v-if="modal" class="modal"/>
     </transition>
+    <email-footer></email-footer>
 `,
   data() {
     return {

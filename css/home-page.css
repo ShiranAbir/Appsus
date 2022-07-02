@@ -4,7 +4,7 @@
 
 .main-app-header{
     background-color: rgb(255, 255, 255);
-    height: 100px;
+    height: 7rem;
     border-bottom: 1px solid #f1f3f4;
     position: relative;
 }
@@ -88,7 +88,7 @@
 
 .about {
     background-color: rgb(255, 255, 255);
-    height: 300px;
+    height: 15rem;
     position: relative;
     display: flex;
 }
@@ -129,7 +129,7 @@
 .main-page-footer {
     position: absolute;
     display: flex;
-    height: 200px;
+    height: 4rem;
     width: 100vw;
     bottom: 0;
     border-top: 1px solid #f1f3f4;
