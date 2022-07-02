@@ -14,9 +14,10 @@ export default {
             <!-- <router-link to="/missKeep">
                 <button>Keep</button>
             </router-link> -->
-            <!-- <router-link to="/books">
+
+            <router-link to="/book">
                 <button>Books</button>
-            </router-link> -->
+            </router-link>
         </section>
     </section>
     `
