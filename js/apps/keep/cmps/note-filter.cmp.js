@@ -31,10 +31,12 @@ export default {
         </div>
     
             <select  v-model="filterBy.type" @change="filter" class="select-input">
+                <option value="">All</option>
                 <option value="note-txt">Text</option>
                 <option value="note-img">Img</option>
                 <option value="note-vid">Video</option>
                 <option value="note-todos">Todo List</option>
+                <option value="note-audio">Audio</option>
             </select> 
           
         </section>
