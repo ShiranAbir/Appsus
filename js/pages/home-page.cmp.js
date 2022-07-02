@@ -4,7 +4,7 @@ export default {
     template: `
     <section class="home-page">
         <section>
-            <header class="app-header">
+            <header class="main-app-header">
             <img class="home-main-login" src="css/apps/email/imgs/unnamed.png">
                 <img class="home-page-main-logo" src="css/apps/email/imgs/logo_gmail_lockup_default_2x_r2.png">
             </header>
@@ -20,7 +20,7 @@ export default {
             <div class="about-shiran"></div>
             <div class="about-adi"></div>
         </section>
-        <footer class="app-footer">
+        <footer>
             <p>Created and designed by Shiran Abir & Adi Birenshtock © 2022</p>
         </footer>
     </section>

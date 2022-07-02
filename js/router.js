@@ -15,7 +15,7 @@ const routes = [
 
 
     {
-        path: '/book',
+        path: '/books',
         component: bookApp
     },
     {
