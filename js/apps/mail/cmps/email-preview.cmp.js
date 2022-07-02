@@ -54,7 +54,7 @@ export default {
             const body = this.email.body;
             const size = 80
 
-            if (!body) return ''
+            if (!body || body === undefined) return ''
 
             if (body.length <= size) {
                 return body

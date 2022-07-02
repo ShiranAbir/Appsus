@@ -95,13 +95,13 @@
   .from { 
     grid-area: from;
     margin-left: 1em;
-    font-weight: 100;
+    font-weight: normal;
     width: 12em;
  }
 
   .subject {
      grid-area: subject;
-     font-weight: 100;
+     font-weight: normal;
      min-width: 25em;
 }
 

@@ -1,5 +1,5 @@
-import {emailService} from "../services/email-services.js"
-// import { noteService } from "../../keep/services/note-service.js"
+import { noteService } from "../../keep/services/note-service.js"
+import { emailService } from "../services/email-services.js"
 
 export default {
     props: ["emailId"],
@@ -10,17 +10,13 @@ export default {
                 <p class="details-from">{{email.from}} <span class="details-from-email">&lt;{{email.fromEmail}}&gt;</span></p>          
                 <p class="details-date">{{formatSentDate(email.sentAt)}}</p>       
                 <p class="details-body">{{email.body}}</p>
-                <!-- <button @click="saveToKeep">Save as Note</button> -->
+                <button class="save-email-note-btn" @click="saveToKeep">Save as Note</button>
             </li>
       </section>
   `,
     data() {
         return {
             email: null,
-            note:{
-                title: null,
-                info: null,
-            }
         }
     },
     methods: {
@@ -56,15 +52,20 @@ export default {
             
             return formattedDate
         },
-        // saveToKeep(){
-        //     this.note
-        //     noteService
-        // },
+        saveToKeep() {
+            var note = noteService.getEmptyTextNote()
+
+            note.title = this.email.subject
+            note.info.txt = this.email.body
+
+            noteService.addNote(note)
+            this.$router.push('/keep')
+        },
     },
     computed: {
         
     },
     created() {
         this.getEmail()
-    }
+    },
 }

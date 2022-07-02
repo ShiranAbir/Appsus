@@ -13,8 +13,8 @@ export default {
         <email-header @backToList="backToList" @toggleModal="toggleModal" @searched="filterByKey"/>
         <sub-nav @filtered="filterByRead" @sortBySubject="sortBySubject" @sortByDate="sortByDate"></sub-nav>
         <email-list ref="emailList" @decrementUnread="decrementUnread" @toggleIsRead="toggleIsRead" @deleteEmail="deleteEmail" @changeFolder="changeFolder" :emails="this.emails"/>
-        <email-create @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
         <side-nav ref="sideNav" @changeFolder="changeFolder" @openNewEmail="openModal"></side-nav>
+        <email-create @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
       </section>
   `,
     data() {
@@ -94,7 +94,6 @@ export default {
             this.criteria.sortOrderAscending = order
             emailService.query(this.criteria).then(emails => this.emails = emails)
         },
-
     },
     computed: {},
     components: {
@@ -106,5 +105,5 @@ export default {
     },
     created() {
         emailService.query(this.criteria).then(emails => this.emails = emails)
-      },
+    },
 }

@@ -11,9 +11,9 @@ export default {
         </section>
         <div class="sub-title">Our Features</div>
         <section class="features-container">
-            <router-link class="home-email-btn" to="/emailApp" />
-            <router-link class="home-keep-btn" to="/keep" />
-            <router-link class="home-books-btn" to="/books" />
+            <router-link class="home-email-btn" to="emailApp" />
+            <router-link class="home-keep-btn" to="keep" />
+            <router-link class="home-books-btn" to="books" />
         </section>
         <p class="about-title">Our team</p>
         <section class="about">
