@@ -5,7 +5,7 @@ export default {
             <div>
             <h1 class="note-title">{{note.title}}</h1>
 
-                <iframe width="197" height="124" :src="note.info.vidUrl">
+                <iframe width="197" height="124" :src="note.info.txt">
                </iframe>
                 
 

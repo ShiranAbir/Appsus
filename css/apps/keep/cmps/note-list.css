@@ -1,7 +1,10 @@
 .note-list-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 100px 0 0 250px;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    /* margin: 100px 0 0 250px; */
     /* width: 90%; */
     /* display: grid;
     grid-template-columns: repeat(auto-fit, 100px);

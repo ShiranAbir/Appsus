@@ -1,0 +1,169 @@
+   /*tiny mobile */
+   
+   @media screen and (max-width: 550px) {
+       .keep-app {
+           min-width: 560px;
+       }
+       .note-list-container {
+           width: 100%;
+           margin: 0 0 0 0;
+           /* display: block; */
+       }
+       .input-form {
+           max-width: 550px;
+           /* margin: auto; */
+       }
+       .title-input {
+           margin-left: 0px;
+           width: 100px;
+       }
+       .input-btn-container {
+           /* background-color: aliceblue; */
+           padding: 0px;
+           /* align-items: center; */
+           margin-left: 0px;
+           /* border-radius: 10px; */
+           /* border: 1px solid rgb(249, 244, 244); */
+           /* box-shadow: 0 0 5px 0.1px; */
+       }
+       .note-filter-container {
+           max-width: 550px;
+           height: auto;
+           display: block;
+           margin: 0;
+           /* justify-content: space-between; */
+       }
+       .filter-text-container {
+           display: block;
+       }
+       .search-input-note {
+           width: 10px;
+           height: 20px;
+           /* text-align: center; */
+           align-self: center;
+           border: none;
+           outline: none;
+           /* padding: 0; */
+       }
+       .select-input {
+           width: 10px;
+           height: 30px;
+       }
+       .select-input>* {
+           width: 100%;
+       }
+   }
+   /* mobile */
+   
+   @media screen and (max-width: 635px) {
+       .note-list-container {
+           width: 100%;
+           margin: 0 0 0 0;
+       }
+       .input-form {
+           max-width: 510px;
+           /* margin: auto; */
+       }
+       .title-input {
+           margin-left: 0px;
+           width: 100px;
+       }
+       .input-btn-container {
+           /* background-color: aliceblue; */
+           padding: 0px;
+           /* align-items: center; */
+           margin-left: 0px;
+           /* border-radius: 10px; */
+           /* border: 1px solid rgb(249, 244, 244); */
+           /* box-shadow: 0 0 5px 0.1px; */
+       }
+       .note-filter-container {
+           max-width: 510px;
+           justify-content: space-around;
+       }
+       .search-input-note {
+           width: 200px;
+           height: 20px;
+           /* text-align: center; */
+           align-self: center;
+           border: none;
+           outline: none;
+           /* padding: 0; */
+       }
+       .select-input {
+           width: 10px;
+           height: 30px;
+       }
+   }
+   /* tablet */
+   
+   @media screen and (max-width: 740px) {
+       .input-form {
+           width: 620px;
+           /* margin: auto; */
+       }
+       /* header */
+       .header {
+           display: block;
+           justify-content: space-between;
+           align-items: center;
+           border: 1px solid rgb(218, 208, 208);
+           margin-bottom: 15px;
+           padding: 7px;
+       }
+       .burger-logo-keep-container {
+           display: flex;
+           align-items: center;
+       }
+       .burger-logo-keep-container>* {
+           margin-right: 20px;
+           font-size: 20px;
+       }
+       .burger {
+           cursor: pointer;
+       }
+       .logo {
+           height: 50px;
+       }
+       .keep-logo {
+           font-family: Arial, Helvetica, sans-serif;
+       }
+       .note-filter-container {
+           position: relative;
+           width: 620px;
+           margin: auto;
+           /* margin: 32px, auto 50px auto; */
+           background-color: fff(243, 248, 233);
+           /* padding: 7px; */
+           border-radius: 7px;
+           /* box-shadow: 0 1px gray */
+           /* border: 1px solid rgb(249, 244, 244); */
+           box-shadow: 0 0 2px 0.1px;
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+       }
+       .filter-text-container {
+           display: flex;
+           justify-self: left;
+           text-align: center;
+           align-self: center;
+       }
+       .filter-text-container p {
+           color: rgb(77, 73, 73);
+           margin-right: 5px;
+       }
+       .search-input-note {
+           width: 200px;
+           height: 20px;
+           /* text-align: center; */
+           align-self: center;
+           border: none;
+           outline: none;
+           /* padding: 0; */
+       }
+       .select-input {
+           width: 150px;
+           height: 30px;
+       }
+   }

@@ -2,6 +2,7 @@ import { noteService } from "../services/note-service.js";
 // import { emailService } from "../../../apps/mail/services/email-services.js"
 // import { emailService } from "../../mail/services.js"
 import { emailService } from "../../mail/services/email-services.js"
+// import { emailService } from "../"
 
 
 import noteList from "../cmps/note-list.cmp.js";
@@ -84,6 +85,7 @@ export default {
 
             noteService.get(noteId)
                 .then(note => {
+                    console.log('note', note)
                     const newEmail = {
                         from: 'Me',
                         fromEmail: 'user@appsus.com',
@@ -93,12 +95,11 @@ export default {
                         subject: note.title,
                         body: note.info.txt,
                     }
+                    console.log('newmail', newEmail)
 
                     emailService.addEmail(newEmail)
-                        // console.log('note', note)
 
                 })
-
 
         },
 
