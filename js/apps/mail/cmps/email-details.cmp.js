@@ -29,7 +29,7 @@ export default {
                 this.email = email
             })
             .catch((error) => {
-                this.$router.push('/email')
+                this.$router.push('email')
             })
         },
         formatSentDate(sentAt){
@@ -59,7 +59,7 @@ export default {
             note.info.txt = this.email.body
 
             noteService.addNote(note)
-            this.$router.push('/keep')
+            this.$router.push('keep')
         },
     },
     computed: {
