@@ -1,0 +1,234 @@
+/* mobile */
+
+@media (max-width: 635px) {
+
+    .email-footer p {
+        text-align: center;
+        margin: auto;
+        font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        color: #666;
+        font-size: 0.7rem;
+    }
+
+    .main-logo {
+        position: absolute;
+        display: flex;
+        left: 70px;
+        top: 30px;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .search-container {
+        display: none;
+        position: absolute;
+        left: 100px;
+        background: #f1f3f4;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        margin: auto;
+        max-width: 100px;
+        transition: background 100ms ease-in, width 100ms ease-out;
+    }
+
+    .clear-search {
+        color: #5f6368;
+        opacity: 1;
+        fill: currentColor;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        padding: 8px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .start-search {
+        color: #5f6368;
+        opacity: 1;
+        fill: currentColor;
+        position: absolute;
+        left: 2px;
+        top: 8px;
+        padding: 8px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .search-input {
+        position: relative;
+        display: none;
+        margin: auto;
+        border: 0 !important;
+        background: transparent;
+        font-variant-ligatures: none;
+        box-sizing: border-box;
+        cursor: text;
+        height: 46px;
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 50px;
+        padding-top: 20px;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-align: start;
+        appearance: auto;
+        font-weight: 100;
+        font: 1.5rem Google Sans, Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    }
+
+    .subject {
+        grid-area: subject;
+        font-weight: normal;
+        min-width: 10rem;
+    }
+
+    .from {
+        display: none;
+    }
+
+    .body {
+        display: none;
+    }
+
+    .date {
+        display: none;
+    }
+
+    .setread-email-btn {
+        display: none;
+    }
+
+    .delete-email-btn {
+        display: none;
+    }
+
+    .email-list {
+        background-color: rgb(255, 255, 255);
+        /* height: 100vh; */
+        width: 100%;
+        position: fixed;
+    }
+
+    .email li {
+        position: relative;
+        display: grid;
+        cursor: pointer;
+        grid-auto-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "subject";
+        color: #202124;
+        box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+        font-weight: 700;
+        font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        font-size: .875rem;
+        height: 50px;
+        margin-left: 72px;
+
+    }
+
+    .create-email-btn-container {
+        position: absolute;
+        display: flex;
+        bottom: -11rem;
+        left: 18rem;
+        margin: auto;
+        border-radius: 28px;
+        font-size: 0;
+        height: 56px;
+        padding: 0;
+        width: 56px;
+        background-color: #fff;
+        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+
+    }
+    .new-email-form{
+        background-color: #fff;
+        border: #666666 solid 1px ;
+        color: #222;    
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        border-radius: 0;
+    }
+
+    .new-email-title{
+        border-radius: 0;
+    }
+
+    .form-header{
+        border-radius: 0;
+    }
+
+    .details-subject {
+        font-family: "Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+        font-size: 1.2rem;
+        font-variant-ligatures: no-contextual;
+        color: #202124;
+        font-weight: 500;
+        white-space: wrap;
+        width: 16rem;
+    }
+
+    .details-from {
+        font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+        font-size: 1rem;
+        letter-spacing: .2px;
+        color: #202124;
+        line-height: 20px;
+        font-weight: bold;
+        margin-left: 0;
+        white-space: pre-wrap;
+        width: 20rem;
+    }
+
+    .details-date{
+        font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+        white-space: pre;
+        position: absolute;
+        display: flex;
+        top: 160px;
+        left: 0;
+    }
+
+    .details-body {
+        white-space: pre-wrap;
+        position: absolute;
+        display: flex;
+        top: 200px;
+        width: 15rem;
+    }
+    
+    /* .read-email {
+        overflow: scroll;
+    } */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,6 +11,7 @@ body{
     height: 3em;
     border-top: 1px solid #f1f3f4;
     z-index: -1;
+    background-color: #fff;
 }
 
 .email-footer p{

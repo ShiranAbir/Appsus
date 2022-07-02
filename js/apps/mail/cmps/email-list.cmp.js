@@ -48,7 +48,7 @@ export default {
         },
         unSelectEmail(){
             this.selectedEmail = null
-        }
+        },
     },
     computed: {
     },

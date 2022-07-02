@@ -1,0 +1,102 @@
+@media (max-width: 635px){
+    .home-page-main-logo {
+        position: absolute;
+        display: flex;
+        width: 200px;
+        margin: auto;
+        cursor: pointer;
+        bottom: 1rem;
+    }
+
+    .home-email-btn {
+        background-image: url('apps/email/imgs/google_gmail_icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 5rem;
+        cursor: pointer;
+        height: 7rem;
+        width: 7rem;
+        display: inline;
+        margin: auto;
+        list-style: none;
+    }
+    .home-keep-btn {
+        background-image: url('apps/email/imgs/google_keep_icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 3rem;
+        cursor: pointer;
+        height: 6rem;
+        width: 6rem;
+        display: inline;
+        margin: auto;
+        list-style: none;
+    }
+    .home-books-btn {
+        background-image: url('apps/email/imgs/google_play_books_icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 3rem;
+        cursor: pointer;
+        height: 6rem;
+        width: 6rem;
+        display: inline;
+        margin: auto;
+        list-style: none;
+    }
+    .about-adi {
+        background-image: url(apps/email/imgs/adi.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 7rem;
+        height: 7rem;
+        width: 7rem;
+        display: inline;
+        margin: 0 auto;
+        list-style: none;
+        border-radius: 100%;
+        border: 2px solid rgb(224, 224, 224);
+    }
+
+    .about-shiran {
+        background-image: url(apps/email/imgs/shiran.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 7rem;
+        height: 7rem;
+        width: 7rem;
+        display: inline;
+        margin: 0 auto;
+        list-style: none;
+        border-radius: 100%;
+        border: 2px solid rgb(224, 224, 224);
+    }
+
+    .shiran-title{
+        display: flex;
+        position: absolute;
+        bottom: -1rem;
+        margin-left: 0;
+        font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+
+    .adi-title {
+        display: flex;
+        position: relative;
+        bottom: -6.4rem;
+        font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        color: #555;
+        left: -19px;
+        line-height: 39px;
+        width: 10rem;
+        margin-left: 0;
+    }
+
+    .features-container {
+        display: flex;
+        border-bottom: 1px solid #f1f3f4;
+        padding-bottom: 0;
+    }
+
+}

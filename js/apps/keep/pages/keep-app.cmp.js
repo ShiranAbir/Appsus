@@ -87,13 +87,13 @@ export default {
                 .then(note => {
                     console.log('note', note)
                     const newEmail = {
-                        from: 'KeepApp',
-                        fromEmail: 'KeeApp@mail.com',
-
+                        from: 'Me',
+                        fromEmail: 'user@appsus.com',
+                        to: 'keep@appsus.com',
+                        cc: null,
+                        bcc: null,
                         subject: note.title,
-                        body: note.info,
-
-                        to: 'user@appsus.com',
+                        body: note.info.txt,
                     }
                     console.log('newmail', newEmail)
 
