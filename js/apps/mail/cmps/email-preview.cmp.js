@@ -5,8 +5,8 @@ export default {
     template: `
       <section>
             <li :class="emailClass" >
-                <p class="from">{{email.from}}</p>
-                <p class="subject">{{email.subject}}</p>
+                <p :class="isBold" class="from">{{email.from}}</p>
+                <p :class="isBold" class="subject">{{email.subject}}</p>
                 <p class="body">{{emailBodyTruncated}}</p>
                 <p class="date">{{formatSentDate(email.sentAt)}}</p>
                 <div @click.stop.prevent="removeEmail(email.id)" class="round-hover-list delete-email-btn"></div>
@@ -45,7 +45,10 @@ export default {
     },
     computed: {
         emailClass(){
-            return (this.email.isRead) ? 'grey' : 'white'
+            return (this.email.isRead) ? 'grey' : ''
+        },
+        isBold(){
+            return (!this.email.isRead) ? 'bold-unread' : ''
         },
         emailBodyTruncated(){
             const body = this.email.body;

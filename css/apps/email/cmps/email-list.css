@@ -83,6 +83,7 @@
 
   .grey{
    background-color: rgb(242,245,245,0.8);
+   font-weight: normal;
  }
 
   .email li:hover{
@@ -92,11 +93,13 @@
   .from { 
     grid-area: from;
     margin-left: 1em;
+    font-weight: 100;
  }
 
   .subject {
      grid-area: subject;
-     }
+     font-weight: 100;
+}
 
   .body {
      grid-area: body;
@@ -105,6 +108,10 @@
 
   .date { 
     grid-area: date;
+ }
+
+ .bold-unread{
+   font-weight: 700;
  }
 
 
