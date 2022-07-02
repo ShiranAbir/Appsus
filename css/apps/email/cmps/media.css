@@ -18,7 +18,7 @@
         width: 100px;
         cursor: pointer;
     }
-
+    
     .search-container {
         display: none;
         position: absolute;
@@ -137,7 +137,7 @@
     .create-email-btn-container {
         position: absolute;
         display: flex;
-        bottom: -14rem;
+        bottom: -11rem;
         left: 18rem;
         margin: auto;
         border-radius: 28px;
@@ -194,7 +194,7 @@
         white-space: pre;
         position: absolute;
         display: flex;
-        top: 120px;
+        top: 160px;
         left: 0;
     }
 
@@ -202,10 +202,13 @@
         white-space: pre-wrap;
         position: absolute;
         display: flex;
-        top: 170px;
+        top: 200px;
         width: 15rem;
     }
     
+    /* .read-email {
+        overflow: scroll;
+    } */
 
 }
 
