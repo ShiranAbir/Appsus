@@ -46,11 +46,11 @@
     width: 100%;
     opacity: 0;
     /* position: fixed; */
-    z-index: 1;
     position: absolute;
     bottom: 0px;
     /* top: 0; */
     /* justify-self: center; */
+    z-index: 10;
 }
 
 .color-input-container {
@@ -58,13 +58,16 @@
     display: flex;
     justify-content: center;
     margin: 0px;
+    /* color: aliceblue; */
 }
 
-.edit-btn-container {
+.pallete-container {}
+
+.edit-btn-container-keep {
     /* position: absolute;
     bottom: 0px; */
     margin: 0;
-    padding: 3px 1px 3px 3px;
+    padding: 3px 1px 3px 0px;
     align-items: center;
     /* margin-right: 0px; */
     width: 100%;
@@ -75,29 +78,32 @@
     padding-right: 30px; */
 }
 
-.edit-btn-container:hover {
-    background-color: rgba(83, 71, 79, 0.37);
+.edit-btn-container-keep:hover {
+    background-color: rgba(12, 11, 12, 0.37);
     /* padding: 0 3px 3px 3px; */
 }
 
-.edit-btn-container>* {
+.edit-btn-container-keep>* {
     border: none;
-    height: 25px;
-    width: 25px;
-    /* background-color: rgba(0, 0, 255, 0.968); */
+    /* height: 25px;
+    width: 25px; */
+    background-color: rgba(255, 0, 0, 0);
     margin: 0px;
     /* cursor: pointer; */
-    border-radius: 50px;
+    /* border-radius: 50px; */
     color: rgb(88, 79, 79);
 }
 
-.edit-btn-container>* :hover {
-    border: none;
-    height: 25px;
-    width: 25px;
-    background-color: rgba(0, 0, 255, 0.968);
-    /* margin: 0px; */
+.edit-btn-container-keep>* :hover {
+    /* border: none; */
     cursor: pointer;
+    color: aliceblue;
+    /* height: 25px;
+    width: 25px; */
+    /* width: 100%;
+    height: 100%; */
+    /* background-color: rgba(207, 207, 221, 0.968); */
+    /* margin: 0px; */
     /* border-radius: 50px; */
     /* color: rgb(88, 79, 79); */
 }
