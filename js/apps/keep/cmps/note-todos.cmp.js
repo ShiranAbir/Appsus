@@ -5,8 +5,12 @@ export default {
 
           
             <div v-for="infoObj in note.info.todos"  >
-                <span @click="changeIsDone" :style="readStyle"> {{infoObj.txt}} </span>
+                <span :style="{'text-decoration': infoObj.isDone? 'line-through' : 'none' } " 
+                
+                :style="readStyle"  @click="infoObj.isDone=!infoObj.isDone"> {{infoObj.txt}} </span>
                 <!-- @click="infoObj.isDone=!infoObj.isDone" -->
+
+                <!-- @click="changeIsDone" -->
            
             </div >  
           </section>
@@ -14,27 +18,26 @@ export default {
     props: ["note"],
     data() {
         return {
-            isDone: false,
+            // isDone: false,
         }
     },
     methods: {
-        changeIsDone(infoObj) {
-            infoObj.isDone = !infoObj.isDone
-            console.log('infoObj', infoObj.isDone)
-                // 'text-decoration': infoObj.isDone  ? 'line-through' : 'none',
+        // changeIsDone(infoObj) {
+        //     // infoObj.isDone = !infoObj.isDone
+        //     console.log('infoObj', infoObj.isDone)
+        //         // 'text-decoration': infoObj.isDone  ? 'line-through' : 'none',
 
-        }
+        // }
 
 
     },
     computed: {
         readStyle() {
             return {
-                // 'text-decoration': ? 'line-through' : 'none',
+
                 width: '150px',
                 'margin-left': '20px',
-
-
+                'cursor': 'pointer',
 
             }
         }
