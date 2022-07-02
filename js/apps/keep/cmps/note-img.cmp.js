@@ -5,7 +5,7 @@ export default {
             <div>
             <h1 class="note-title">{{note.title}}</h1>
 
-                <img class="input-image" :src="note.info.url" alt="">
+                <img class="input-image" :src="note.info.txt" alt="">
                 
 
             </div>

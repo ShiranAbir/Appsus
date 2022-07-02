@@ -84,7 +84,7 @@ function _createNotes() {
                 type: "note-vid",
                 isPinned: false,
                 info: {
-                    vidUrl: "https://www.youtube.com/embed/ki3jIHa1M2s"
+                    txt: "https://www.youtube.com/embed/ki3jIHa1M2s"
                 }
 
             },
@@ -94,7 +94,7 @@ function _createNotes() {
                 type: "note-audio",
                 isPinned: false,
                 info: {
-                    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                    txt: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
                 }
 
             },
@@ -104,7 +104,7 @@ function _createNotes() {
                 type: "note-vid",
                 isPinned: false,
                 info: {
-                    vidUrl: "https://www.youtube.com/embed/LG-9SaCUmu8"
+                    txt: "https://www.youtube.com/embed/LG-9SaCUmu8"
                 }
 
             },
@@ -113,7 +113,7 @@ function _createNotes() {
                 title: "My MOMs Elephant",
                 type: "note-img",
                 info: {
-                    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Desert_elephant_%28Loxodonta_africana%29_male.jpg/375px-Desert_elephant_%28Loxodonta_africana%29_male.jpg",
+                    txt: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Desert_elephant_%28Loxodonta_africana%29_male.jpg/375px-Desert_elephant_%28Loxodonta_africana%29_male.jpg",
                     title: "Bobi and Me"
                 },
 
@@ -132,7 +132,7 @@ function _createNotes() {
                 title: "Cupssss",
                 type: "note-img",
                 info: {
-                    url: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
+                    txt: "https://mytrivia.co.il/wp-content/uploads/2019/12/%D7%95%D7%A8%D7%93.jpg",
                     title: "Bobi and Me"
                 },
 
@@ -181,7 +181,7 @@ function getEmptyImgNote() {
         title: null,
         type: "note-img",
         info: {
-            url: "",
+            txt: "",
         },
 
     }
@@ -194,7 +194,7 @@ function getEmptyVidNote() {
         type: "note-vid",
         isPinned: false,
         info: {
-            vidUrl: "",
+            txt: "",
         }
 
     }
@@ -226,7 +226,7 @@ function getEmptyAudioNote() {
         type: "note-audio",
         isPinned: false,
         info: {
-            url: "",
+            txt: "",
         }
 
     }

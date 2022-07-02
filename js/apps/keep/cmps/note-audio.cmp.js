@@ -7,7 +7,7 @@ export default {
 
             <!-- <audio src="note.info.url"></audio> -->
             <audio controls class="audio">
-        <source :src="note.info.url" type="audio/ogg">
+        <source :src="note.info.txt" type="audio/ogg">
        
       Your browser does not support the audio element.
       </audio>
