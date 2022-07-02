@@ -12,6 +12,7 @@ export default {
     template: `
     <note-filter @filtered="filterNote"  :notes="notes"/>
     <add-note @addNewNote="addNewNote" />
+    
     <section class="keep-app" >
    
     <note-list :notes="notesToDisplay" @remove="removeNote" @pinNote="pinNote" @changeBGColor="changeBGC" @duplicateNote="duplicateNote" @sendToMail="sendToMail"/>
@@ -22,6 +23,7 @@ export default {
         noteList,
         addNote,
         noteFilter,
+
     },
     data() {
         return {

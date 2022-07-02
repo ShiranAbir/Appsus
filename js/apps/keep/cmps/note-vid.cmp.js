@@ -3,9 +3,9 @@ export default {
           <section>
           
             <div>
-            <h1 class="title">{{note.title}}</h1>
+            <h1 class="note-title">{{note.title}}</h1>
 
-                <iframe width="200" height="126" :src="note.info.vidUrl">
+                <iframe width="197" height="124" :src="note.info.vidUrl">
                </iframe>
                 
 

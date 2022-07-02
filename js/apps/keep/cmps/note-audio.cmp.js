@@ -3,10 +3,10 @@ export default {
           <section>
 
             <div>
-            <h1 class="title">{{note.title}}</h1>
+            <h1 class="note-title">{{note.title}}</h1>
 
             <!-- <audio src="note.info.url"></audio> -->
-            <audio controls>
+            <audio controls class="audio">
         <source :src="note.info.url" type="audio/ogg">
        
       Your browser does not support the audio element.

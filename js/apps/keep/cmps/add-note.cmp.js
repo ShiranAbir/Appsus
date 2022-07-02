@@ -6,7 +6,8 @@ export default {
            
           
             <form class="input-form" >
-                <input type="text" placeholder="Title" name="title" v-model="title" class="title-input">
+                
+                <input type="text" :placeholder="textInputPlaceholder" name="title" v-model="title" class="title-input" @click="expandInput">
                 
                 
                 <label class="input-btn-container">
@@ -20,10 +21,12 @@ export default {
 
                  <button  @click="addVidNote"><i class="fa-solid fa-clapperboard"></i></button>
 
+                 <button  @click="addAudioNote"><i class="fa-solid fa-music"></i></button>
+
                      </label>  
 
                 <p>
-                    <textarea name="content"  placeholder="Take a note..."  v-model="content" cols="5" rows="3"></textarea>
+                    <textarea v-if="isExpanded"  name="content"  placeholder="Take a note..."  v-model="content" cols="5" rows="3" ></textarea>
                 </p>
 
                 
@@ -36,13 +39,33 @@ export default {
         return {
             title: null,
             content: null,
-            noteId: null
+            noteId: null,
+            isExpanded: false,
+            textInputPlaceholder: 'Take a Note...'
         }
     },
     methods: {
-        // addNewNote() {
-        //     this.$emit('addNewNote')
-        // },
+        expandInput() {
+            this.isExpanded = true
+            this.textInputPlaceholder = 'Title'
+            console.log('this.isExpanded', this.isExpanded)
+        },
+
+        addAudioNote() {
+            const note = noteService.getEmptyAudioNote()
+            note.title = this.title
+            note.info.url = this.content
+            noteService.addNote(note)
+            this.$emit('addNewNote', note)
+
+
+
+            this.isExpanded = false
+            this.textInputPlaceholder = 'Take a Note...'
+            console.log('this.isExpanded', this.isExpanded)
+
+
+        },
         addTextNote() {
             const note = noteService.getEmptyTextNote()
             note.title = this.title
@@ -51,6 +74,8 @@ export default {
             noteService.addNote(note)
 
             this.$emit('addNewNote', note)
+            this.isExpanded = false
+            this.textInputPlaceholder = 'Take a Note...'
         },
         addImgNote() {
 
@@ -61,6 +86,8 @@ export default {
             noteService.addNote(note)
 
             this.$emit('addNewNote', note)
+            this.isExpanded = false
+            this.textInputPlaceholder = 'Take a Note...'
         },
         addVidNote() {
 
@@ -70,6 +97,8 @@ export default {
             noteService.addNote(note)
 
             this.$emit('addNewNote', note)
+            this.isExpanded = false
+            this.textInputPlaceholder = 'Take a Note...'
         },
         addTodoNote() {
             const note = noteService.getEmptyTodoNote()
@@ -88,6 +117,8 @@ export default {
             noteService.addNote(note)
 
             this.$emit('addNewNote', note)
+            this.isExpanded = false
+            this.textInputPlaceholder = 'Take a Note...'
 
 
         }

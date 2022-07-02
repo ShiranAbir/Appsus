@@ -10,18 +10,18 @@ import noteAudio from "./note-audio.cmp.js";
 
 export default {
     template: `
-        
+      
     <section class="note-list-container">
 
-
-         <div class="note-container" :style="readStyle" v-for="note in notes">
+         <div class="note-container" :style="readStyle" v-for="note in notes" :style="{'background-color':note.bGC}">
          <component :is="note.type"
          :note="note" :style="{'background-color':note.bGC}" > 
           
 
          </component> 
-         <div class="edit-btn-container">
 
+
+         <div class="edit-btn-container">
 
          <button @click="pinNote(note.id)" ><i class="fa-solid fa-thumbtack"></i></button>
 
@@ -38,7 +38,6 @@ export default {
 
             <button  @click="remove(note.id)"><i class="fa-solid fa-trash-can"></i></button>
             
-           
         </div>
          </div>
         
