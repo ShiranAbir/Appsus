@@ -32,7 +32,7 @@
 }
 
 .note-container:hover {
-    border: 1px solid rgb(249, 244, 244);
+    /* border: 1px solid rgb(249, 244, 244); */
     box-shadow: 0 0 5px 0.1px;
 }
 
@@ -84,21 +84,22 @@
     border: none;
     height: 25px;
     width: 25px;
-    background-color: rgba(0, 0, 255, 0.968);
+    /* background-color: rgba(0, 0, 255, 0.968); */
     margin: 0px;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-radius: 50px;
     color: rgb(88, 79, 79);
 }
 
 .edit-btn-container>* :hover {
-    /* border: none;
+    border: none;
     height: 25px;
-    width: 25px; */
-    background-color: rgba(177, 21, 76, 0.895);
+    width: 25px;
+    background-color: rgba(0, 0, 255, 0.968);
     /* margin: 0px; */
-    /* cursor: pointer; */
+    cursor: pointer;
     /* border-radius: 50px; */
+    /* color: rgb(88, 79, 79); */
 }
 
 .top-pin {
