@@ -5,7 +5,7 @@ export default {
  <section class="email-compose">
         <form class="new-email-form">
             <div class="form-header">
-            <div><span>New Message</span></div>
+            <div class="new-email-title">New Message</div>
             <img @click="closeModal" class="close-btn" src="css/apps/email/imgs/cleardot.gif"/>
             <img class="maximize-btn" src="css/apps/email/imgs/cleardot.gif"/>
             <img class="minimize-btn" src="css/apps/email/imgs/cleardot.gif"/>
@@ -18,7 +18,7 @@ export default {
 
             <div class="form-btns">
                 <button @click="sendEmail" class="send-btn">Send</button>
-                <div class="delete-btn"></div>
+                <div @click="closeModal" class="delete-btn"></div>
             </div>
         </form>
     </section>

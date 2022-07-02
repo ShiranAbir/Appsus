@@ -47,11 +47,16 @@
     background-position: center;
     background-size: 15rem;
     cursor: pointer;
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
     display: inline;
     margin: auto;
     list-style: none;
+}
+
+.home-email-btn:hover{
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .home-keep-btn {
@@ -60,11 +65,16 @@
     background-position: center;
     background-size: 8rem;
     cursor: pointer;
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
     display: inline;
     margin: auto;
     list-style: none;
+}
+
+.home-keep-btn:hover{
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .home-books-btn {
@@ -73,11 +83,16 @@
     background-position: center;
     background-size: 8rem;
     cursor: pointer;
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
     display: inline;
     margin: auto;
     list-style: none;
+}
+
+.home-books-btn:hover{
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .features-container {
