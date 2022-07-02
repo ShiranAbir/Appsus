@@ -103,6 +103,7 @@
     display: inline;
     margin: 0 auto;
     list-style: none;
+    border-radius: 100%;
 }
 
 .about-shiran {
@@ -115,6 +116,7 @@
     display: inline;
     margin: 0 auto;
     list-style: none;
+    border-radius: 100%;
 }
 
 .about-title {
@@ -123,6 +125,7 @@
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
     margin-top: 50px;
+    margin-bottom: 50px;
     font-size: 1.5rem;
 }
 
@@ -140,4 +143,39 @@
     margin: auto;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
+}
+
+.shiran-title{
+    display: flex;
+    position: absolute;
+    bottom: 1.5rem;
+    margin-left: 1.5rem;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    color: #555;
+    line-height: 40px;
+}
+
+.adi-title{
+    display: flex;
+    position: absolute;
+    bottom: 1.5rem;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    color: #555;
+    margin-left: 1.5rem;
+    line-height: 40px;
+}
+
+.linkdin-icon{
+    background-image: url(apps/email/imgs/linkedin.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
+.linkdin-icon:hover{
+    background-color: #eee;
+    border-radius: 50%;
 }
