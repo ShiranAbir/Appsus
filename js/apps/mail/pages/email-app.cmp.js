@@ -6,7 +6,9 @@ export default {
   template: `
     
     <email-folder-list @toggleModal="toggleModal" :folder="folder"/>
-    <modal @closeModal="closeModal" v-if="modal" class="modal"/>
+    <transition name="slide-fade">
+      <modal @closeModal="closeModal" v-if="modal" class="modal"/>
+    </transition>
     <email-footer></email-footer>
 `,
   data() {

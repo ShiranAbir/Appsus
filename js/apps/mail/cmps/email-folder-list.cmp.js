@@ -10,7 +10,7 @@ export default {
     props: ["email", "folder"],
     template: `
       <section>
-        <email-header @toggleModal="toggleModal" @searched="filterByKey"/>
+        <email-header @backToList="backToList" @toggleModal="toggleModal" @searched="filterByKey"/>
         <sub-nav @filtered="filterByRead" @sortByDate="sortByDate"></sub-nav>
         <email-list ref="emailList" @decrementUnread="decrementUnread" @toggleIsRead="toggleIsRead" @deleteEmail="deleteEmail" @changeFolder="changeFolder" :emails="this.emails"/>
         <email-create @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
@@ -86,6 +86,9 @@ export default {
             this.criteria.sortBy = 'date'
             this.criteria.sortOrderAscending = order
             emailService.query(this.criteria).then(emails => this.emails = emails)
+        },
+        backToList(){
+            this.$refs.emailList.unSelectEmail()
         },
 
     },

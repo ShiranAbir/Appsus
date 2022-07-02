@@ -38,7 +38,7 @@
     position: absolute;
     display: flex;
     height:32px ;
-    margin: auto;
+    margin-left: 5px;
     background: #f1f3f4;
     border: 1px solid transparent;
     border-radius: 8px;

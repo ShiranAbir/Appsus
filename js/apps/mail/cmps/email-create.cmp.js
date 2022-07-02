@@ -6,9 +6,9 @@ export default {
         <form class="new-email-form">
             <div class="form-header">
             <div><span>New Message</span></div>
-            <img @click="closeModal" class="close-btn" src="../../../css/apps/email/imgs/cleardot.gif"/>
-            <img class="maximize-btn" src="../../../css/apps/email/imgs/cleardot.gif"/>
-            <img class="minimize-btn" src="../../../css/apps/email/imgs/cleardot.gif"/>
+            <img @click="closeModal" class="close-btn" src="css/apps/email/imgs/cleardot.gif"/>
+            <img class="maximize-btn" src="css/apps/email/imgs/cleardot.gif"/>
+            <img class="minimize-btn" src="css/apps/email/imgs/cleardot.gif"/>
             </div>
             <div class="form-all-input">
                 <input v-model="newEmail.to" class="form-input form-to" type="text" placeholder="To:" />
