@@ -13,7 +13,10 @@ export default {
       
     <section class="note-list-container">
 
-         <div class="note-container" :style="readStyle" v-for="note in notes" :style="{'background-color':note.bGC}">
+         <div class="note-container" :style="readStyle" v-for="note in notes" :style="{'background-color':note.bGC}"  >
+
+        <div class="top-pin" :style="{'display':note.isPinned? 'block': 'none'}"><i class="fa-solid fa-thumbtack"></i></div>
+
          <component :is="note.type"
          :note="note" :style="{'background-color':note.bGC}" > 
           

@@ -101,3 +101,12 @@
     cursor: pointer;
     border-radius: 50px;
 }
+
+.top-pin {
+    position: absolute;
+    top: -7px;
+    left: 182px;
+    color: rgb(255, 204, 0);
+    font-size: 20px;
+    /* text-shadow: -1px -1px 0 rgb(181, 171, 171), 1px -1px 0rgb(181, 171, 171) -1px 1px 0rgb(181, 171, 171), 1px 1px 0 rgb(181, 171, 171); */
+}
