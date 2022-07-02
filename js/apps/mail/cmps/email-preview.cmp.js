@@ -7,7 +7,7 @@ export default {
             <li :class="emailClass" >
                 <p class="from">{{email.from}}</p>
                 <p class="subject">{{email.subject}}</p>
-                <p class="body">{{email.body}}</p>
+                <p class="body">{{emailBodyTruncated}}</p>
                 <p class="date">{{formatSentDate(email.sentAt)}}</p>
                 <div @click.stop.prevent="removeEmail(email.id)" class="round-hover-list delete-email-btn"></div>
                 <div @click.stop.prevent="toggleIsRead(email.id)" class="round-hover-list setread-email-btn"></div>
@@ -46,6 +46,17 @@ export default {
     computed: {
         emailClass(){
             return (this.email.isRead) ? 'grey' : 'white'
+        },
+        emailBodyTruncated(){
+            const body = this.email.body;
+            const size = 80
+
+            if (!body) return ''
+
+            if (body.length <= size) {
+                return body
+            }
+            return body.substr(0, size) + '...'
         },
     },
 }

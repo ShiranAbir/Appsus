@@ -1,5 +1,5 @@
 import longText from "../cmps/long-text.cmp.js";
-import reviewAdd from "../views/review-Add.cmp.js";
+import reviewAdd from "../views/review-add.cmp.js";
 import { bookService } from "../services/book-service.js";
 
 

@@ -20,9 +20,10 @@ export default {
             <div class="about-shiran"></div>
             <div class="about-adi"></div>
         </section>
-        <footer>
+        <div class="main-page-footer">
             <p>Created and designed by Shiran Abir & Adi Birenshtock © 2022</p>
-        </footer>
+        </div>
     </section>
+   
     `
 }
