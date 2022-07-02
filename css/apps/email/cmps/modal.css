@@ -44,6 +44,21 @@
 
 }
 
+.missBooks-btn{
+    background-image: url(../imgs/google_play_books_icon.svg);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position-x: center;
+    background-position-y: center;
+    height: 48px;    
+    width: 48px;
+    position: absolute;
+    display: flex;
+    left: 8px;
+    padding: 4px;
+    top: 270px;
+}
+
 .close-modal{
     color: #5f6368;
     opacity: 1;
