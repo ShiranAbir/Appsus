@@ -20,8 +20,8 @@
 .sub-title {
     font-size: 2rem;
     text-align: center;
-    height: 10rem;
-    line-height: 150px;
+    height: 6rem;
+    line-height: 7rem;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
 }
@@ -47,11 +47,16 @@
     background-position: center;
     background-size: 15rem;
     cursor: pointer;
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
     display: inline;
     margin: auto;
     list-style: none;
+}
+
+.home-email-btn:hover{
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .home-keep-btn {
@@ -60,11 +65,16 @@
     background-position: center;
     background-size: 8rem;
     cursor: pointer;
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
     display: inline;
     margin: auto;
     list-style: none;
+}
+
+.home-keep-btn:hover{
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .home-books-btn {
@@ -73,11 +83,16 @@
     background-position: center;
     background-size: 8rem;
     cursor: pointer;
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
     display: inline;
     margin: auto;
     list-style: none;
+}
+
+.home-books-btn:hover{
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .features-container {
@@ -88,7 +103,7 @@
 
 .about {
     background-color: rgb(255, 255, 255);
-    height: 15rem;
+    height: 10rem;
     position: relative;
     display: flex;
 }
@@ -104,6 +119,7 @@
     margin: 0 auto;
     list-style: none;
     border-radius: 100%;
+    border: 2px solid rgb(224, 224, 224);
 }
 
 .about-shiran {
@@ -117,6 +133,7 @@
     margin: 0 auto;
     list-style: none;
     border-radius: 100%;
+    border: 2px solid rgb(224, 224, 224);
 }
 
 .about-title {
@@ -124,8 +141,8 @@
     margin: auto;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     font-size: 1.5rem;
 }
 
@@ -148,7 +165,7 @@
 .shiran-title{
     display: flex;
     position: absolute;
-    bottom: 1.5rem;
+    bottom: -4rem;
     margin-left: 1.5rem;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
@@ -158,7 +175,7 @@
 .adi-title{
     display: flex;
     position: absolute;
-    bottom: 1.5rem;
+    bottom: -4rem;
     font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     color: #555;
     margin-left: 1.5rem;

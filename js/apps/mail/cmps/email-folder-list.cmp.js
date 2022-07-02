@@ -11,7 +11,7 @@ export default {
     template: `
       <section>
         <email-header @backToList="backToList" @toggleModal="toggleModal" @searched="filterByKey"/>
-        <sub-nav @filtered="filterByRead" @sortByDate="sortByDate"></sub-nav>
+        <sub-nav @filtered="filterByRead" @sortBySubject="sortBySubject" @sortByDate="sortByDate"></sub-nav>
         <email-list ref="emailList" @decrementUnread="decrementUnread" @toggleIsRead="toggleIsRead" @deleteEmail="deleteEmail" @changeFolder="changeFolder" :emails="this.emails"/>
         <email-create @closeNewEmail="closeModal" v-if="newEmailCreate"></email-create>
         <side-nav ref="sideNav" @changeFolder="changeFolder" @openNewEmail="openModal"></side-nav>
@@ -82,13 +82,17 @@ export default {
             this.$refs.sideNav.changeUnreadCount(false)
         },
         sortByDate(order){
-            console.log(order)
             this.criteria.sortBy = 'date'
             this.criteria.sortOrderAscending = order
             emailService.query(this.criteria).then(emails => this.emails = emails)
         },
         backToList(){
             this.$refs.emailList.unSelectEmail()
+        },
+        sortBySubject(order){
+            this.criteria.sortBy = 'subject'
+            this.criteria.sortOrderAscending = order
+            emailService.query(this.criteria).then(emails => this.emails = emails)
         },
 
     },

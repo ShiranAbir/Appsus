@@ -14,14 +14,13 @@
     
 }
 
-.form-header div{
+.new-email-title{
     margin: 0;
     border-radius: 15px 15px 0 0;
     margin-left: 15px;
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
     color: #ffffff;
-
     font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     font-size: 1.25rem;
     letter-spacing: .2px;
@@ -38,16 +37,11 @@
     font-size: .875rem;
 }
 
-.form-header span{
-    font-size: .875rem;
-}
-
-
 
 .close-btn{
     position: absolute;
     right: 5px;
-    top:5px;
+    top:10px;
     background: no-repeat url(../imgs/sprites-general.png) 0 -789px;
     background-size: 24px 882px;
     height: 24px;
@@ -65,7 +59,7 @@
 .maximize-btn{
     position: absolute;
     right: 30px;
-    top:5px;
+    top:10px;
     background: url(../imgs/expand_window_2x.png);
     background-size: 24px;
     height: 24px;
@@ -83,7 +77,7 @@
 .minimize-btn{
     position: absolute;
     right: 55px;
-    top:5px;
+    top:10px;
     background: no-repeat url(../imgs/sprites-general.png) 0 -141px;
     background-size: 24px 882px;
     height: 24px;
@@ -150,18 +144,20 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
-    height: 20px;
+    height: 30px;
     opacity: 0.54;
-    width: 20px;
+    width: 30px;
     align-items: center;
     border: none;
     display: inline-flex;
     justify-content: center;
     outline: none;
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     right: 10px;
 }
 .delete-btn:hover{
     opacity:1;
+    background-color: #eee;
+    border-radius: 50%;
 }

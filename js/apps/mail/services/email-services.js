@@ -51,7 +51,7 @@ function getEmailById(emailId) {
 }
 
 function setAsRead(id) {
-    return getEmailById(id).then(email=>{
+    return getEmailById(id).then(email => {
         const emailIdx = gEmails.findIndex(email => email.id === id)
         var emailCopy = JSON.parse(JSON.stringify(email))
         emailCopy.isRead = !emailCopy.isRead
@@ -104,6 +104,21 @@ function query(criteria) {
                 if (criteria.sortOrderAscending) return x.sentAt - y.sentAt
                 return y.sentAt - x.sentAt
             })
+        } else if (criteria.sortBy === "subject") {
+            emails = emails.sort((x, y) => {
+                const fx = x.subject.toLowerCase(),
+                      fy = y.subject.toLowerCase()
+
+                if (criteria.sortOrderAscending) {
+                    if (fy < fx) return -1
+                    if (fy > fx) return 1
+                } else {
+                    if (fx < fy) return -1
+                    if (fx > fy) return 1
+                }
+                
+                return 0;
+            })
         }
 
         return Promise.resolve(emails)
@@ -134,14 +149,14 @@ function deleteEmail(id) {
     var idx = gEmails.findIndex(email => email.id === id)
     gEmails.splice(idx, 1)
     utilService.saveToStorage(EMAILS_KEY, gEmails)
-    
+
     return Promise.resolve(gEmails)
 }
 
 function loadEmails() {
     gEmails = [{
         from: 'Sessionize.com',
-        fromEmail:'event@notifications.sessionize.com',
+        fromEmail: 'event@notifications.sessionize.com',
         id: 'e101',
         subject: 'Sessionize activation',
         body: `Classic account user@appsus.com on Sessionize is not activated.
@@ -156,7 +171,7 @@ Thanks!`,
         removedAt: 1656745045000,
     }, {
         from: 'Me',
-        fromEmail:'user@appsus.com',
+        fromEmail: 'user@appsus.com',
         id: 'e126',
         subject: 'Question about sizing kit',
         body: `Hi there,
@@ -172,7 +187,7 @@ Thanks a lot!`,
         to: 'orders@ouraring.com',
     }, {
         from: 'NordVPN',
-        fromEmail:'support@nordvpn.com',
+        fromEmail: 'support@nordvpn.com',
         id: 'e103',
         subject: 'We have received a request (ID #787254)',
         body: `Hello there,
@@ -193,7 +208,7 @@ NordVPN Support & Customer Care team`,
         to: 'user@appsus.com'
     }, {
         from: 'Rapidshare AG',
-        fromEmail:'support@rapidshare.com',
+        fromEmail: 'support@rapidshare.com',
         id: 'e104',
         subject: 'RapidShare - RapidShare Security-Lock',
         body: `Dear customer,
@@ -224,7 +239,7 @@ This message is confidential and intended for the recipient only. It is not allo
         to: 'user@appsus.com'
     }, {
         from: 'Amazon.com',
-        fromEmail:'auto-confirm@amazon.com',
+        fromEmail: 'auto-confirm@amazon.com',
         id: 'e105',
         subject: 'Your Amazon.com order #111-7436091-1300292',
         body: `Hello,
@@ -244,7 +259,7 @@ Amazon.com`,
         to: 'user@appsus.com'
     }, {
         from: 'Amazon.com',
-        fromEmail:'auto-confirm@amazon.com',
+        fromEmail: 'auto-confirm@amazon.com',
         id: 'e125',
         subject: 'Your Amazon.com order #111-743961-1300692',
         body: `Hello,
@@ -265,7 +280,7 @@ Amazon.com`,
         to: 'user@appsus.com'
     }, {
         from: 'Google Play',
-        fromEmail:'noreply-developer-googleplay@google.com',
+        fromEmail: 'noreply-developer-googleplay@google.com',
         id: 'e124',
         subject: 'Google Play Developer Program Policy Update',
         body: `Hello Google Play Developer,
@@ -295,7 +310,7 @@ Email preferences: You have received this mandatory email service announcement t
         to: 'user@appsus.com'
     }, {
         from: 'Google Workspace',
-        fromEmail:'workspace-noreply@google.com',
+        fromEmail: 'workspace-noreply@google.com',
         id: 'e106',
         subject: 'Your transition to Google Workspace is complete',
         body: `Welcome to Google Workspace
@@ -307,7 +322,7 @@ Enterprise Standard gives you the same features you rely on to connect, create, 
         to: 'user@appsus.com'
     }, {
         from: 'Google Payments',
-        fromEmail:'payments-noreply@google.com',
+        fromEmail: 'payments-noreply@google.com',
         id: 'e107',
         subject: 'Google Workspace: Your invoice is available',
         body: `Your Google Workspace monthly invoice is available. Please login to your panel to learn more.
@@ -322,7 +337,7 @@ Payments profile ID: 5423-4613-0756`,
         to: 'user@appsus.com'
     }, {
         from: 'UptimeRobot',
-        fromEmail:'no-reply@uptimerobot.com',
+        fromEmail: 'no-reply@uptimerobot.com',
         id: 'e108',
         subject: 'Your monitors will be deleted in 30 days',
         body: `Hi there!
@@ -336,7 +351,7 @@ If you'd like to keep your monitors running and prevent the deletion just log in
         to: 'user@appsus.com'
     }, {
         from: 'Booking.com',
-        fromEmail:'noreply@booking.com',
+        fromEmail: 'noreply@booking.com',
         id: 'e114',
         subject: `Have a great trip! Here's how to get your reward`,
         body: `Hi,
@@ -354,7 +369,7 @@ Go to Rewards & Wallet on Booking.com to see more.`,
         to: 'user@appsus.com'
     }, {
         from: 'Ship24 - Tracking',
-        fromEmail:'no-reply@ship24.com',
+        fromEmail: 'no-reply@ship24.com',
         id: 'e116',
         subject: 'Your package UY180556910AZ is on its way 📦',
         body: `Your package is on its way!
@@ -366,7 +381,7 @@ Good news, your package UY180556830AZ has been handled by the courier and will a
     }, {
 
         from: 'Me',
-        fromEmail:'user@appsus.com',
+        fromEmail: 'user@appsus.com',
         id: 'e118',
         subject: `Claimed a reward, but points hasn't been decreased`,
         body: `Hello,
@@ -387,7 +402,7 @@ Shiran
     }, {
 
         from: 'Google',
-        fromEmail:'no-reply@accounts.google.com',
+        fromEmail: 'no-reply@accounts.google.com',
         id: 'e120',
         subject: 'Security alert',
         body: `We noticed a new sign-in to your Google Account on a Windows device.
@@ -399,7 +414,7 @@ If not, we’ll help you secure your account.`,
         to: 'user@appsus.com'
     }, {
         from: 'Twitter',
-        fromEmail:'notify@twitter.comm',
+        fromEmail: 'notify@twitter.comm',
         id: 'e122',
         subject: 'Your Twitter data is ready',
         body: `Hi,
@@ -416,7 +431,7 @@ Twitter`,
         to: 'user@appsus.com'
     }, {
         from: 'GitHub',
-        fromEmail:'noreply@github.com',
+        fromEmail: 'noreply@github.com',
         id: 'e123',
         subject: '[GitHub] Your personal access token has expired',
         body: `Hey,

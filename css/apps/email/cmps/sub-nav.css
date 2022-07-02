@@ -31,6 +31,32 @@
     color: #5f6368;
     text-align: center;
     line-height: 28px;
+    white-space: pre;
+}
+
+.sortBySubject{
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    height:32px ;
+    margin: auto;
+    margin-left: 195px;
+    background: #f1f3f4;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: 1rem Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: auto;
+    color: #5f6368;
+    text-align: center;
+    line-height: 28px;
+    white-space: pre;
 }
 
 .filterEmails{
