@@ -15,7 +15,7 @@ export default {
 
          <div class="note-container" :style="readStyle" v-for="note in notes" :style="{'background-color':note.bGC}"  >
 
-        <div class="top-pin" :style="{'display':note.isPinned? 'block': 'none'}"><i class="fa-solid fa-thumbtack"></i></div>
+        <div  class="top-pin" :style="{'display':note.isPinned? 'block': 'none'}"><i class="fa-solid fa-thumbtack"></i></div>
 
          <component :is="note.type"
          :note="note" :style="{'background-color':note.bGC}" > 
@@ -24,20 +24,27 @@ export default {
          </component> 
 
 
-         <div class="edit-btn-container">
+         <div class="edit-btn-container-keep">
 
          <button @click="pinNote(note.id)" ><i class="fa-solid fa-thumbtack"></i></button>
 
-            <div class="color-input-container">
+            <!-- <div> -->
+                <button  class="color-input-container">
 
-                <input class="color-input" type="color" @input="changeBGC(note)" v-model="colorInput">
-                <i class="fa-solid fa-palette"></i>
+                    <input class="color-input" type="color" @input="changeBGC(note)" v-model="colorInput">
+                    <div class="pallete-container">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
 
-            </div>
+                </button>
+
+
+
+            <!-- </div> -->
 
             <button @click="sendToMail(note.id)" ><i class="fa-solid fa-envelope"></i></button>
 
-            <button @click="duplicateNote(note.id)"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button @click="duplicateNote(note.id)"><i class="fa-solid fa-clone"></i></button>
 
             <button  @click="remove(note.id)"><i class="fa-solid fa-trash-can"></i></button>
             

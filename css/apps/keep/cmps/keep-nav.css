@@ -5,13 +5,21 @@
     z-index: 1;
     height: 90vh;
     width: 140px;
-    top: 95px;
+    top: 80px;
+    /* transition: width 2s; */
+    /* transition: 2sec; */
 }
+
+
+/* 
+.keep-nav-bar:active {
+    transition: all 0.2s ease-out;
+} */
 
 .keep-nav-bar>* {
     text-align: start;
-    margin: 0;
-    padding: 15px 0 15px 0;
+    /* margin-top: 10px; */
+    padding: 13px 0 13px 0;
     /* border: 1px rgb(230, 185, 132) solid; */
     cursor: pointer;
     border-radius: 0 50px 50px 0;
@@ -29,4 +37,5 @@
     border: none;
     background-color: #feefc300;
     text-align: left;
+    font-size: larger;
 }

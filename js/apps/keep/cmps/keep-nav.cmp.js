@@ -4,15 +4,15 @@ export default {
             <div class="keep-nav-bar">
            
             <router-link to="/emailApp">
-                <button class="btn-mail-nav">Email</button>
+                <button class="btn-mail-nav"> &nbsp;  &nbsp;Email</button>
             </router-link>
 
             <router-link to="/">
-                <button class="btn-mail-nav">Home</button>
+                <button class="btn-mail-nav"> &nbsp;  &nbsp; Home</button>
             </router-link>
 
             <router-link  to="/books" >
-            <button class="btn-mail-nav">Books</button>
+            <button class="btn-mail-nav"> &nbsp;  &nbsp; Books</button>
 
 
                  </router-link>
