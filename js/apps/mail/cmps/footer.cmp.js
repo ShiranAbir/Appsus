@@ -3,9 +3,9 @@
 export default {
     template: `
             <section>
-                <footer>
+                <div class="email-footer">
                     <p>Created and designed by Shiran Abir © 2022</p>
-                </footer>
+                </div>
             </section>
     `,
     components: {

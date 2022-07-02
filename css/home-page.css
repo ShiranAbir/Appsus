@@ -1,3 +1,10 @@
+.home-page{
+    height: 100%;
+}
+
+html{
+    height: 100vw;
+}
 
 .main-app-header{
     background-color: rgb(255, 255, 255);
@@ -17,7 +24,7 @@
 .sub-title{
     font-size: 2rem;
     text-align: center;
-    height: 200px;
+    height: 10rem;
     line-height: 150px;
     font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     color: #555;
@@ -42,10 +49,10 @@
     background-image: url('apps/email/imgs/google_gmail_icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 380px;
+    background-size: 15rem;
     cursor: pointer;
-    height: 250px;
-    width: 330px;
+    height: 15rem;
+    width: 15rem;
     display: inline;
     margin: auto;
     list-style: none;
@@ -55,10 +62,10 @@
     background-image: url('apps/email/imgs/google_keep_icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 210px;
+    background-size: 8rem;
     cursor: pointer;
-    height: 290px;
-    width: 210px;
+    height: 15rem;
+    width: 15rem;
     display: inline;
     margin: auto;
     list-style: none;
@@ -68,10 +75,10 @@
     background-image: url('apps/email/imgs/google_play_books_icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 240px;
+    background-size: 8rem;
     cursor: pointer;
-    height: 275px;
-    width: 240px;
+    height: 15rem;
+    width: 15rem;
     display: inline;
     margin: auto;
     list-style: none;
@@ -86,7 +93,7 @@
 
 .about{
     background-color: rgb(255, 255, 255);
-    height: 500px;
+    height: 300px;
     position: relative;
     display: flex;
 }
@@ -95,11 +102,11 @@
     background-image: url(apps/email/imgs/adi.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 240px;
-    height: 275px;
-    width: 240px;
+    background-size: 10rem;
+    height: 10rem;
+    width: 10rem;
     display: inline;
-    margin: auto;
+    margin: 0 auto;
     list-style: none;
 }
 
@@ -107,11 +114,11 @@
     background-image: url(apps/email/imgs/shiran.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 240px;
-    height: 275px;
-    width: 240px;
+    background-size: 10rem;
+    height: 10rem;
+    width: 10rem;
     display: inline;
-    margin: auto;
+    margin: 0 auto;
     list-style: none;
 }
 
@@ -123,3 +130,20 @@
     margin-top: 50px;
     font-size: 1.5rem;
 }
+
+.main-page-footer{
+    position: absolute;
+    display:flex;
+    height: 200px;
+    width: 100vw;
+    bottom: 0;
+    border-top: 1px solid #f1f3f4;
+}
+
+.main-page-footer p{
+    text-align: center;
+    margin: auto;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    color: #555;
+}
+
