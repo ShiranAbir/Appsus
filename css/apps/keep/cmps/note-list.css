@@ -61,7 +61,6 @@
 }
 
 .edit-btn-container {
-    display: block;
     /* position: absolute;
     bottom: 0px; */
     margin: 0;
@@ -77,15 +76,15 @@
 }
 
 .edit-btn-container:hover {
-    background-color: rgba(146, 139, 144, 0.37);
+    background-color: rgba(83, 71, 79, 0.37);
     /* padding: 0 3px 3px 3px; */
 }
 
 .edit-btn-container>* {
     border: none;
-    height: 20px;
+    height: 25px;
     width: 25px;
-    background-color: rgba(0, 0, 255, 0);
+    background-color: rgba(0, 0, 255, 0.968);
     margin: 0px;
     cursor: pointer;
     border-radius: 50px;
@@ -93,11 +92,20 @@
 }
 
 .edit-btn-container>* :hover {
-    border: none;
-    height: 20px;
-    width: 25px;
+    /* border: none;
+    height: 25px;
+    width: 25px; */
     background-color: rgba(177, 21, 76, 0.895);
-    margin: 0px;
-    cursor: pointer;
-    border-radius: 50px;
+    /* margin: 0px; */
+    /* cursor: pointer; */
+    /* border-radius: 50px; */
+}
+
+.top-pin {
+    position: absolute;
+    top: -7px;
+    left: 182px;
+    color: rgb(255, 204, 0);
+    font-size: 20px;
+    /* text-shadow: -1px -1px 0 rgb(181, 171, 171), 1px -1px 0rgb(181, 171, 171) -1px 1px 0rgb(181, 171, 171), 1px 1px 0 rgb(181, 171, 171); */
 }

@@ -145,6 +145,7 @@ function _createNotes() {
                 type: "note-todos",
                 info: {
                     label: "Get my stuff together",
+                    isDone: false,
                     todos: [
                         { txt: "Driving liscence", isDone: false },
                         { txt: "Coding power", isDone: false }
@@ -209,6 +210,7 @@ function getEmptyTodoNote() {
         type: "note-todos",
         info: {
             label: "Get my stuff together",
+            isDone: false,
 
             todos: [
                 { txt: "Driving liscence", isDone: false },
