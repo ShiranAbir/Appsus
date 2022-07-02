@@ -10,7 +10,7 @@ import bookAdd from "../cmps/book-add.cmp.js";
 export default {
     template: `
     <section class="book-app" >
-      
+   
         <book-filter v-if="books" @filtered="filterBook" :books="books"/>
         
         <book-add @addBook="updateBooks"/>
@@ -19,6 +19,11 @@ export default {
         
         <!-- //הבוקס בגרשיים זב הבוקס מהדטה -->
 
+        
+       
+    <div class="keep-footer">
+            <p>Created and designed by Shiran Abir & Adi Birenshtock © 2022</p>
+        </div>
     
     </section>
     

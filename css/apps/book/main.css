@@ -32,10 +32,10 @@ p {
 
 /* app-footer */
 
-.app-footer {
+
+/* .app-footer {
     background-color: rgb(164, 110, 110);
     /* height: 5vh; */
-}
 
 
 /* book-list */
@@ -57,7 +57,7 @@ p {
     padding: 10px;
     margin: 10px;
     width: 130px;
-    height: 220px;
+    height: 290px;
     /* background-color: rgb(55, 180, 30); */
     box-shadow: 0 0 2px 0.1px;
     border-radius: 7px;
@@ -169,4 +169,41 @@ p {
 
 .option:hover {
     background-color: rgb(188, 188, 182);
+}
+
+
+/* header */
+
+.book-header {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-header-btn {
+    background-color: rgba(31, 100, 161, 0);
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    font-size: large;
+    border: 0ch;
+}
+
+.book-header-btn:hover {
+    /* background-color: rgb(138, 133, 127); */
+    box-shadow: 0 0 2px 0.1px;
+}
+
+.book-header-img-logo {
+    height: 40px;
+    margin: 30px;
+}
+
+.logo-and-books-container {
+    display: flex;
+    align-items: center;
+}
+
+.book-header-btn-container {
+    margin-right: 50px;
 }

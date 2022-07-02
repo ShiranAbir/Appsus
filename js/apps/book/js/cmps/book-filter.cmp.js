@@ -1,22 +1,35 @@
 export default {
     props: ['books'],
     template: `
-    <section class="book-filter">
-        <header>
-        <router-link to="/emailApp">
-                <button>Email</button>
-            </router-link>
-        </header>
+        <header class="book-header">
 
-        </router-link>
+        <div class="logo-and-books-container">
+
+            <img class="book-header-img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Google_Play_Books_icon_%282016%29.svg/640px-Google_Play_Books_icon_%282016%29.svg.png" alt="">
+
+            <div>Books</div>
+
+        </div>
+
+        <div class="book-header-btn-container">
+
+            <router-link to="/emailApp">
+                    <button class="book-header-btn">Email</button>
+                </router-link>
+                
+            </router-link>
             <router-link to="/">
-                <button >Home</button>
+                <button class="book-header-btn" >Home</button>
             </router-link>
-
+            
             <router-link to="/keep">
-                <button >Keep</button>
+                <button class="book-header-btn" >Keep</button>
             </router-link>
+        </div>
+        
+    </header>
 
+    <section class="book-filter">
 
 
 

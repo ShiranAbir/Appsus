@@ -1,0 +1,18 @@
+.keep-footer {
+    /* position: absolute; */
+    display: block;
+    /* bottom: 0; */
+    width: 100%;
+    margin-left: 0;
+    height: 3em;
+    border-top: 1px solid #f1f3f4;
+}
+
+.keep-footer p {
+    text-align: center;
+    margin: auto;
+    /* display: flex; */
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    color: #666;
+    font-size: 1.25rem;
+}
