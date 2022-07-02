@@ -31,9 +31,7 @@ export default {
         readStyle() {
             return {
                 // 'text-decoration': ? 'line-through' : 'none',
-                // 'text-align': 'left',
                 width: '150px',
-                // 'margin': '20px',
                 'margin-left': '20px',
 
 
