@@ -9,6 +9,7 @@ export default {
       <modal @closeModal="closeModal" v-if="modal" class="modal"/>
     </transition>
     <email-footer></email-footer>
+    
 `,
   data() {
     return {

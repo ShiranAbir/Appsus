@@ -13,12 +13,12 @@
     .main-logo {
         position: absolute;
         display: flex;
-        left: 60px;
+        left: 70px;
         top: 30px;
-        width: 100px;
+        width: 150px;
         cursor: pointer;
     }
-    
+
     .search-container {
         display: none;
         position: absolute;
