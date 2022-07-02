@@ -85,12 +85,13 @@ export default {
             noteService.get(noteId)
                 .then(note => {
                     const newEmail = {
-                        from: 'me',
-                        to: null,
+                        from: 'Me',
+                        fromEmail: 'user@appsus.com',
+                        to: 'keep@appsus.com',
                         cc: null,
                         bcc: null,
                         subject: note.title,
-                        body: note.info,
+                        body: note.info.txt,
                     }
 
                     emailService.addEmail(newEmail)

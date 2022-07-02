@@ -80,16 +80,17 @@
         font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
         color: #555;
     }
-    
-    .adi-title{
+
+    .adi-title {
         display: flex;
-        position: absolute;
-        bottom: -2rem;
+        position: relative;
+        bottom: -6.4rem;
         font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
         color: #555;
+        left: -19px;
+        line-height: 39px;
+        width: 10rem;
         margin-left: 0;
-        line-height: 30px;
-
     }
 
     .features-container {
