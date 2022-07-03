@@ -122,15 +122,15 @@
         font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
         font-size: .875rem;
         height: 50px;
-        margin-left: 72px;
+        margin-left: 65px;
 
     }
 
     .create-email-btn-container {
         position: absolute;
         display: flex;
-        bottom: -11rem;
-        left: 18rem;
+        bottom: -10rem;
+        left: 17rem;
         margin: auto;
         border-radius: 28px;
         font-size: 0;
@@ -251,18 +251,25 @@
         height: 32px;
         padding-top: 90px;
         z-index:1;
+        margin-left: 65px;
     }
 
     .modal{
         z-index: 3;
         position: fixed;
+        width: 63px;
     }
 
     .hamburger{
         top:15px;
-        left: 7px;
+        left: 6px;
     }
 
+    .side-nav{
+        width: 60px;
+        top: 100px;
+        left: 4px;
+    }
 }
 
 
